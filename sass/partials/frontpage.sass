@@ -1,0 +1,118 @@
+
+.home    
+.front
+    opacity: 0
+    transition: opacity 1s
+    .finished &
+        opacity: 1
+    .second &
+        // background: url('../img/octopuss_background.jpg') center / cover no-repeat
+        opacity: 1  
+    &_container
+        position: relative
+        top: 0
+        left: 0
+        height: calc( 100vh)
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        overflow: hidden
+        margin-bottom: 40px
+        +breakpoint(md)
+            height: 60vw
+        +breakpoint(sm)
+            height: 70vw
+    #front-logo
+        // max-width: 80%
+        max-height: calc( 70% - 120px)
+        width: 100%
+        z-index: 100
+        pointer-events: none
+        position: absolute
+        top: 20%
+        position: static
+        +breakpoint(xl)
+        +breakpoint(md)
+        	width: 80%
+        	left: 10%
+        path
+            // transform: scale(0)
+            // transform-origin: 50% 50%
+            opacity: 0
+            +transitionSlow
+            +breakpoint(sm)
+                stroke-width: 3px
+        &.animateIn
+            path
+                opacity: 1
+                transform: scale(1)
+    video, iframe
+        position: absolute
+        top: 50%
+        left: 50%
+        min-width: 100%
+        min-height: 100%
+        transform: translate( -50%, -50%)
+        +breakpoint(md)
+            height: 100vw
+            width: 100vw
+            left: 50vw
+            top: 25vw
+    iframe
+        transform: translate( -50%, -50%) scale(1.2)
+        // transform: translate( -50%, -50%)
+        +breakpoint(md)
+            // top: 0
+            transform: translate( -50%, -50%)
+    &_images
+        .has-video &
+            display: none
+            +breakpoint(sm)
+                display: block
+    &_video
+        width: 100vw
+        height: 65vw
+    &_image 
+        opacity: 0
+        z-index: -100
+        position: absolute
+        +coverall
+        height: 100%
+        transition: opacity 2s, transform 8s linear
+        // +transition($time: 1.2s)
+        overflow: hidden
+        &.is-active
+            opacity: 1
+            z-index: 10
+            transform: scale(1.1)
+        &_info
+            z-index: 10000
+            position: absolute
+            top: calc( 50% - 10px)
+            width: 100%
+            text-align: center
+            color: $pink
+            h2,p,h3
+                color: $darkblue
+                display: inline-block
+                margin: 0 5px   
+                text-transform: uppercase
+                line-height: 20px
+            h3
+                font-size: 15px
+            h2, h3
+                +breakpoint(md)
+                    font-size: 13px
+                +breakpoint(lg)
+                    font-size: 14px
+                +breakpoint(1920)
+                    font-size: 20px
+            p
+                font-size: 12px
+                font-family: Knockout
+                letter-spacing: 4px
+                font-size: 10px
+                letter-spacing: 5.5px
+                vertical-align: bottom
+

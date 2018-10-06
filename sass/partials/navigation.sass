@@ -1,0 +1,378 @@
+        
+header
+    z-index: 100
+    // .home &
+    //     opacity: 0
+    .about &
+        // background: $darkblue
+    .player-open & 
+        opacity: 0
+        z-index: -100
+
+.header_logo    
+    &_container
+        position: absolute
+        +coverall
+        height: 100vh
+        display: flex
+        align-items: center
+        flex-flow: column
+        justify-content: center
+        z-index: 100
+        // +transition
+        opacity: 0
+        animation: fadein 1s linear forwards
+        mix-blend-mode: exclusion
+        .home &
+            background: black
+            transition: background 1s
+        .finished &
+            background: transparent
+        .scrolled-logo &, body:not(.home) &
+            position: fixed
+            width: 140px
+            height: 60px
+            margin: 0 auto
+            z-index: 2000
+            top: 15px
+            background: none
+            // display: block
+            // text-align: center
+        +breakpoint(md)
+            height: 60vw
+        +breakpoint(sm)
+            position: absolute !important
+            // width: 60px
+            // height: 60px
+            margin: 0 auto
+            z-index: 2000
+            top: 120px !important
+            background: none
+            .page-template-template_archive &
+                top: 70px !important
+
+        // pointer-events: none
+            
+        
+    &_img
+        height: 100px
+        width: 100px
+        transition: top 0.2s, transform 0.2s
+        transition: all 2s
+        +transition
+        // height: 50px
+        // width: 50px
+        // position: fixed
+        // top: 15px
+        // left: calc(50%)
+        transform: translateX(0%)
+        +breakpoint(sm)
+            height: 60px
+            width: 60px
+        .scrolled-logo &, body:not(.home) &
+            height: 60px
+            width: 60px
+                
+            // position: fixed
+            // top: 15px
+            // // left: calc(50% - 30px)
+            // margin: 0 auto
+            // left: 50%
+            // transform: translateX(-50%)
+    &_info
+        text-align: center
+        // transform: translateY(-20px)
+        +transition
+        +breakpoint(sm)
+            body:not(.home) &
+                opacity: 0 !important
+                visibility: hidden !important
+                height: 0
+        .scrolled-logo &, body:not(.home) &
+            opacity: 0
+            visibility: hidden
+            height: 0
+            +breakpoint(sm)
+                opacity: 1
+                visibility: visible
+                height: auto
+    &_arrow-down
+        margin-top: 60px
+        height: 20px
+        width: 33px    
+        position: relative
+        animation: pulse 0.8s infinite linear alternate-reverse
+        transition: opacity 1s
+        opacity: 0
+        +transition($delay: 1s)
+        transform: translateY(50px)
+        top: -40px
+        .finished &
+            opacity: 1
+            top: 0
+        .scrolled-logo &, body:not(.home) &
+            opacity: 0
+            visibility: hidden
+            height: 0
+            display: none
+        &:after, &:before
+            content: ''
+            background: white
+            width: 20px
+            height: 2px
+            position: absolute
+            transform-origin: bottom 50% 
+        &:before
+            transform: rotate(45deg)
+            left: 0
+        &:after
+            transform: rotate(-45deg)
+            right: 0
+    h3
+        color: white
+        font-size: 14px
+        margin-bottom: 0px
+        margin-top: 30px
+        // color: white
+        letter-spacing: 0.6px
+        opacity: 0
+        animation: fadein-down 0.5s 0.2s linear forwards
+    h2
+        color: white
+        margin-top: 5px
+        font-weight: 700
+        opacity: 0
+        animation: fadein-down 0.5s 0.3s linear forwards
+
+// .header_logo    
+//     &_container
+//         +coverall
+//         position: absolute
+//         width: 60px
+//         height: 60px
+//         margin: 0 auto
+//         z-index: 2000
+//         top: 15px
+//         background: none
+//         display: flex
+//         align-items: center
+//         flex-flow: column
+//         justify-content: center
+//         z-index: 100
+//         opacity: 0
+//         animation: fadein 1s linear forwards
+//         .home &
+//             height: 100vh
+//             width: 100vw
+//             position: absolute
+//             // background: black
+//             // mix-blend-mode: exclusion
+//         .scrolled-logo &, &
+//             position: fixed
+//             width: 60px
+//             height: 60px
+//             margin: 0 auto
+//             z-index: 2000
+//             top: 15px
+//             background: none
+//         +breakpoint(md)
+//             height: 60vw
+//         +breakpoint(sm)
+//             position: absolute !important
+//             // width: 60px
+//             // height: 60px
+//             margin: 0 auto
+//             z-index: 2000
+//             top: 100px !important
+//             background: none
+
+//         // pointer-events: none
+            
+        
+//     &_img
+//         .home &
+//             height: 100px
+//             width: 100px
+//         .scrolled-logo &, &
+//             height: 60px
+//             width: 60px
+//             transition: top 0.2s, transform 0.2s
+//             transition: all 2s
+//             cursor: pointer
+//             +transition
+//             &:hover
+//                 transform: scale(1.10)
+//             // height: 50px
+//             // width: 50px
+//             // position: fixed
+//             // top: 15px
+//             // left: calc(50%)
+//             transform: translateX(0%)
+//             +breakpoint(sm)
+//                 height: 60px
+//                 width: 60px
+        
+//     &_info
+//         .home &
+//             opacity: 1
+//             visibility: visible
+//             height: auto
+//         .scrolled-logo &, &
+//             text-align: center
+//             +transition
+//             opacity: 0
+//             visibility: hidden
+//             height: 0
+//         // +breakpoint(sm)
+//         //     .page-template-template_archive &
+//         //         opacity: 0 !important
+//         //         visibility: hidden !important
+//         //         height: 0
+//         // .page-template-template_archive &
+//         //     +breakpoint(sm)
+//         //         opacity: 1
+//         //         visibility: visible
+//         //         height: auto
+                
+//     h3
+//         color: white
+//         font-size: 14px
+//         margin-bottom: 0px
+//         margin-top: 30px
+//         // color: white
+//         letter-spacing: 0.6px
+//         opacity: 0
+//         animation: fadein-down 0.5s 0.2s linear forwards
+//     h2
+//         color: white
+//         margin-top: 5px
+//         font-weight: 700
+//         opacity: 0
+//         animation: fadein-down 0.5s 0.3s linear forwards
+.nav
+    &_container
+        z-index: 100
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 80px
+        display: flex
+        flex-flow: column
+        justify-content: center
+        background: transparent
+        +transitionSlow
+        opacity: 0
+        +breakpoint(sm)
+            position: absolute
+        .finished &
+            opacity: 1
+        .about &
+            background: none
+        
+        .player-open & 
+            opacity: 0
+            z-index: -100
+        
+    ul
+        display: flex
+        flex-flow: row nowrap
+        justify-content: center 
+        // margin: 10px 0
+        margin: 0
+    li      
+        margin: 0 15px
+        +transition
+        +breakpoint(sm)
+            margin: 0 5px !important
+            transform: none !important
+        &.current-menu-item a
+            opacity: 1
+            &:before
+                transform: none
+        &:nth-child(1)
+            margin-left: 60px
+        .scrolled-nav &,  body:not(.home) &
+            &:nth-child(1)
+                margin-left: 10px
+            &:nth-child(2)
+                // margin-right: 50px
+            &:nth-child(3)
+                // margin-left: 40px
+                transform: translateX(75px)
+                +breakpoint(sm)
+                    transform: translateX(25px)
+            &:nth-child(4)
+                transform: translateX(60px)
+                +breakpoint(sm)
+                    transform: translateX(25px)
+    // li      
+    //     margin: 0 15px
+    //     +transition
+    //     +breakpoint(sm)
+    //         margin: 0 5px
+    //     &.current-menu-item a
+    //         opacity: 1
+    //         &:before
+    //             transform: none
+    //     // &:nth-child(1)
+    //     //     margin-left: 40px
+    //     .home:not(.scrolled-nav) &
+    //         margin: 0 15px 
+    //         transform: none
+    //     .scrolled-nav &, &
+    //         &:nth-child(1)
+    //             margin-left: 10px
+    //         &:nth-child(2)
+    //             // margin-right: 50px
+    //         &:nth-child(3)
+    //             margin-left: 40px
+    //             transform: translateX(45px)
+    //             +breakpoint(sm)
+    //                 transform: translateX(25px)
+    //         &:nth-child(4)
+    //             transform: translateX(40px)
+    //             +breakpoint(sm)
+    //                 transform: translateX(25px)
+    a
+        +transition
+        position: relative
+        border: none
+        @extend .knockout
+        text-transform: uppercase
+        font-size: 14px
+        font-weight: 700
+        color: lightgrey
+        +breakpoint(sm)
+            // color: black
+        &:before
+            content: ''
+            background: $darkyellow
+            position: absolute
+            bottom: -2px
+            height: 1px
+            width: 97%
+            +transition
+            transform: scaleX(0)
+        +breakpoint(lg)            
+            &:hover
+                opacity: 1
+                &:before
+                    transform: scaleX(1)
+    &_portfolios
+        margin-top: 5px
+        li
+            a
+                text-transform: uppercase
+                opacity: .5
+                @extend .knockout
+                +breakpoint(mdonly)
+                    font-size: 16px
+                .home &
+                    opacity: 1
+                span.firstname
+                    @extend .caslon
+                    +breakpoint(mdonly)
+                        font-size: 16px
+    
+                

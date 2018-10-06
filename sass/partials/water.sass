@@ -1,0 +1,181 @@
+.map
+	height: calc( 80vh - 100px)
+	width: calc(1200px * 0.7)
+	height: calc( 708px * 0.7)
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	background-position: center
+	background-size: contain 
+	background-repeat: no-repeat
+	.water-open & 
+		z-index: 10000
+	+breakpoint(md)
+		top: 40%
+		width: calc(1200px * 0.6)
+		height: calc( 708px * 0.6)
+	+breakpoint(sm)
+		top: 40%
+		width: calc(1200px * 0.25)
+		height: calc( 708px * 0.25)
+	+breakpoint(xl)
+		width: 1200px
+		height: 708px
+	+breakpoint(27)
+		width: calc(1200px * 1.5)
+		height: calc( 708px * 1.5)
+	&_bg
+		width: 100%
+		height: 100%
+		margin: 0 auto
+		// opacity: 0
+		&_video, &_img
+			width: 100%
+			height: 100%
+			position: absolute
+			top: 0
+			left: 0
+			pointer-events: none
+			// z-index: 1
+		&_video
+			+breakpoint(md)	
+				display: none
+		&_img
+			opacity: 0
+			+breakpoint(lg)
+				display: none
+	&_project
+		position: absolute
+		+breakpoint(sm)
+			width: 20px
+			height: 20px
+	&_dot
+		height: 10px
+		height: 10px
+		// width: 12px
+		// height: 12px
+		padding: 5px
+		display: inline-block
+		cursor: pointer
+		vertical-align: top
+		opacity: 0
+		z-index: 100
+		+transition
+		.is-open &
+			height: 14px
+			width: 14px
+			transform: translate(-1px, -2px)
+		+breakpoint(sm)
+			width: 10px
+			height: 10px
+		+breakpoint(lg)
+			&:hover
+				transform: scale(1.2)
+	&_info
+		opacity: 0
+		display: inline-block
+		+transition($time: 0.4s)
+		z-index: -1
+		position: absolute
+		top: 0
+		left: 30px
+		.is-open &
+			opacity: 1	
+			z-index: 1000
+		+breakpoint(md)
+			left: -90px
+			top: 30px
+			text-align: center
+		+breakpoint(sm)
+			padding: 20px 40px
+			text-align: center
+			position: fixed
+			width: calc( 100% - 80px)
+			top: 100%
+			left: 0px
+			transform: none
+			background: $waterblue
+		&_header
+			width: 200px
+			&.link
+				font-size: 8px 
+				display: block
+				+transition
+				&:hover
+					transform: scale(1.04)
+			+breakpoint(sm)
+				width: auto
+			*
+				display: inline-block
+				font-size: 12px
+				line-height: 12px
+				letter-spacing: 0
+				margin: 0
+				margin-right: 5px
+			h4
+				font-weight: 100
+				font-size: 8px
+				line-height: 12px
+		p
+			// margin-top: 0
+			max-width: 200px
+			font-size: 12px
+			line-height: 12px
+			+breakpoint(sm)
+				max-width: none
+
+.water
+	// background: $blue
+	// background: $waterblue
+	&.chrome
+    	background: $waterblueCH
+	&.safari
+    	background: $waterblueSA
+	&.firefox
+    	background: $waterblueFF
+	@extend .flex-center
+	height: 100vh
+	padding-top: 33vh
+	padding-bottom: 20vh
+	padding-bottom: 0
+	+breakpoint(md)
+		padding-top: 30vh
+	+breakpoint(sm)
+		padding-top: 45vh
+	+breakpoint(xl)
+		padding-top: 30vh
+	&_temp_img
+		padding-bottom: 100px
+		width: 100%
+		height: auto
+		+breakpoint(md)
+			padding-top: 100px
+	&_content
+		opacity: 0
+		z-index: 100
+		width: 100%
+		padding: 20px 40px 60px
+		+transitionSlow
+		transform: translateY(200px)
+		background: none !important
+		.chrome &
+    		background: transparentize($waterblueCH, 0.2)
+		.safari &
+	    	background: transparentize($waterblueSA, 0.2)
+		.firefox &
+	    	background: transparentize($waterblueFF, 0.2)
+		&.fade-up
+			opacity: 1
+			transform: none
+		.water-open & 
+			opacity: 0.3 !important
+	&_header
+		text-align: center
+		margin-top: -5px
+		h2
+			display: inline-block
+		h4
+			font-size: 16px
+			display: inline-block
+			font-weight: 100

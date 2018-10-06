@@ -1,0 +1,97 @@
+
+
+// WORDPRESS CLASSES
+
+
+.alignleft
+    float: left
+    margin-right: 20px
+
+.alignright
+    float: right
+    margin-left: 20px
+
+.right
+    float: right
+.left
+    float: left
+    
+.size-thumbnail
+
+.size-full
+
+// POSITIONS
+
+.hide
+    display: none
+
+.hidden
+    visibility: hidden !important
+
+.visible
+    visibility: visible !important     
+
+.no-alpha
+    opacity: 0 !important
+
+.full-height
+    min-height: 100vh
+
+.center
+    &-text
+        text-align: center
+.flex
+    display: flex
+    &-center
+        @extend .flex
+        justify-content: center
+        align-items: center
+
+.zoomable
+    transition: all .25s
+    backface-visibility: hidden
+    &:hover
+        transform: scale(1.05)
+    &-svg
+        svg
+            +transition
+        &:hover
+            svg
+                transform: scale(1.2)               
+    &-img
+        img
+            +transition
+        &:hover
+            img
+                transform: scale(1.2)                           
+
+.box-shadow
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.50)
+
+button
+    border: none
+    outline: 0
+
+
+.divider
+    display: block
+    width: 100%
+    height: 2px
+    background: black
+    margin: 2.5rem 0
+    &-short
+        @extend .divider
+        width: 60px
+        &-white
+            @extend .divider-short
+            background: white
+        &-grey
+            @extend .divider-short
+            background: #979797
+    &-white
+        @extend .divider
+        background: white       
+
+
+// CUSTOM
+
