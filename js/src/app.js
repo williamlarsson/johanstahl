@@ -1,7 +1,7 @@
 require('./TweenMax.min.js');
 require('vimeo-froogaloop');
+const Papa = require('./papaparse.min.js');
 
-// import ScrollTo from './ScrollTo.js'
 
 var blue = "#132A3E",
     darkblue = "#0D1B28",
@@ -34,7 +34,8 @@ function App() {
         $player_iframe = $('.portfolio_iframe'),
         $player_title = $('.portfolio_player_title'),
         $player_client = $('.portfolio_player_client'),
-        $player_content = $('.portfolio_player_content');
+        $player_content = $('.portfolio_player_content'),
+        videosLoaded = false;
 
     // Variables other
     var $transitionFast = 0.45,
@@ -65,6 +66,40 @@ function App() {
             scrollTop: toElement.offsetTop - 40
         },500) 
     }
+
+    function htmlString(title,client, image, embed, info, size){
+        return `<div class="portfolio_image ${size}-width" data-url='${JSON.stringify(embed)}'
+            data-title="${title}" style="background-image: url('img/${image}');" data-hash="${title.toLocaleLowerCase().replace(' ','-')}">
+            <div class="portfolio_info">
+                <h3 class="portfolio_title">${title}</h3>
+                <hr>
+                <h2 class="portfolio_client">${client}</h2>
+            </div>
+            <div class="portfolio_content">${info}</div>
+        </div>
+    `};
+
+    function injectHTML(data, targetEl){
+
+        for (item of data){
+
+            if (item[0] == "TITLE") {
+
+                continue;
+            }
+
+            let string = htmlString(
+                item[0],
+                item[1],
+                item[2],
+                item[3],
+                item[4],
+                item[5]);
+
+            targetEl.insertAdjacentHTML('beforeend', string)
+        }
+        videosLoaded = true;
+    }
     // // navigation
     // $listItems.on('click', function (ev) {
     //     ev.preventDefault()
@@ -83,8 +118,7 @@ function App() {
         /*************** FRONTPAGE ***************/ 
         var front_container = $('.front_container'), 
             front_images = $('.front_image'),
-            iframes_counter = 0,
-            iframes_length = $fields['front_images'].length - 1;
+            iframes_counter = 0;
 
         setTimeout(function() {
             $body.addClass('finished');
@@ -98,43 +132,55 @@ function App() {
             console.log('set video')
             // $f_front_video = $f($('.front_video').find('iframe')[0])
             // console.log($f_front_video.api)
-        } else {
-            $(front_images[0]).addClass('is-active')
-            cycleFrontImages()
         }
-        stopper = true
-        function cycleFrontImages(){
-            var current = $(front_images[iframes_counter])
-            setTimeout(function(){
-                var next = $(front_images[iframes_counter])
-                next.addClass('is-active')
-                current.removeClass('is-active')
-                cycleFrontImages()
-            }, ( $fields['front_images'][iframes_counter]['duration'] ))
-            if (iframes_counter == iframes_length) {
-                iframes_counter = 0;
-            } else {
-                iframes_counter++;                
+       
+
+        let workDataPath = './data/work.csv',
+            workContainer = document.querySelector('#work>.portfolio_images');
+        
+
+        Papa.parse(workDataPath, {
+            download: true,
+            complete: (result) => {
+                injectHTML(result.data, workContainer)
             }
-        }
+        })
+
     } else {
         setTimeout(function() {
             $body.addClass('finished');
         }, 200);
     }
+    if ($body.hasClass('archive-page')){
+        
+
+        let archivePath = './data/archive.csv',
+            archiveContainer = document.querySelector('#archive>.portfolio_images');
+        
+
+        Papa.parse(archivePath, {
+            download: true,
+            complete: (result) => {
+                injectHTML(result.data, archiveContainer)
+            }
+        })
+        
+    };
     // load bg images
-    $('.portfolio_image').each(function (index, item) {
-        var img = new Image()
-        img.onload = function () {
-            console.log('image loaded', img.src)
-            $(item).css({
-                "background-image": "url(" + img.src + ")",
-                "transition-delay": "0." + index + "s"
-            });
-            $(item).addClass('loaded')
-        }
-        img.src = $(this).data('src')
-    });
+
+    // $('.portfolio_image').each(function (index, item) {
+    //     console.log('item', item)
+    //     var img = new Image()
+    //     img.onload = function () {
+    //         // console.log('image loaded', img.src)
+    //         $(item).css({
+    //             "background-image": "url(" + img.src + ")",
+    //             "transition-delay": "0." + index + "s"
+    //         });
+    //         $(item).addClass('loaded')
+    //     }
+    //     img.src = $(this).data('src')
+    // });
     
     function showVideo(el){
         if ( frontHasVideo ) {   
@@ -144,24 +190,33 @@ function App() {
         $player_iframe.html( JSON.parse( $el.data('url') ));
         $player_title.text( $el.find('.portfolio_title').text() )
         $player_client.text( $el.find('.portfolio_client').text() )
-        $player_content.text( $el.find('.portfolio_client').text() )
+        console.log($player_client.text())
+        $player_client[0].style.display = $player_client.text().length > 0 ? 'inline-block' : 'none';
+        // $player_content.text( $el.find('.portfolio_client').text() )
         $player_content.html( $el.find('.portfolio_content').html() )
         $body.addClass('player-open');
     }
     if (window.location.hash.length > 1 ) {
-        var el = $(".portfolio_image[data-hash='"+window.location.hash.replace('#','')+"']");
-        showVideo(el)
+        let waitForLoad = setInterval(() => {
+            if (videosLoaded) {
+                var el = $(".portfolio_image[data-hash='"+window.location.hash.replace('#','')+"']");
+                console.log(el)
+                showVideo(el)
+                clearInterval(waitForLoad)
+            }
+        }, 500);
     }
-    $('.portfolio_image').click(function(event) {
+    $(document).on('click','.portfolio_image', function(event) {
         event.preventDefault();
-        window.location.hash = $(this).data('hash');
-        showVideo(this);
+        window.location.hash = $(event.target).data('hash');
+        showVideo(event.target);
     });
     $player_close.click(function(event){
         window.location.hash = '';
         event.preventDefault();
         $body.removeClass('player-open');
-        $f($player_iframe.find('iframe')[0]).api('pause');
+        $player_iframe.html('')
+        // $f($player_iframe.find('iframe')[0]).api('pause');
         if ( frontHasVideo ) {   
             $f($('.front_video').find('iframe')[0]).api('play');
         }

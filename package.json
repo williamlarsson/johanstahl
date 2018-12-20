@@ -1,5 +1,5 @@
 {
-  "name": "Jensfager",
+  "name": "Johanstahl",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -23,7 +23,7 @@
     "html-webpack-plugin": "^2.22.0",
     "jquery": "^3.1.0",
     "loaders-by-extension": "^1.0.0",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.11.0",
     "script-loader": "^0.7.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",

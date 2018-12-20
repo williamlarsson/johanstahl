@@ -1,7 +1,6 @@
 
 .portfolio
 	// position: fixed
-
 	position: absolute
 	height: calc( 100% - 120px)
 	top: 0
@@ -31,6 +30,7 @@
 			opacity: 0
 			z-index: -100
 	&_image
+		background-color: rgba(grey, 0.4)
 		display: flex
 		flex-flow: column nowrap
 		justify-content: center
@@ -107,6 +107,7 @@
 		z-index: 100
 		opacity: 0
 		color: lightgrey
+		pointer-events: none
 		+transitionSlow
 		h2, h3
 			letter-spacing: 4px
