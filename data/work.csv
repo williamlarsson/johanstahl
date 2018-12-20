@@ -1,17 +1,17 @@
-TITLE;CLIENT;IMAGE;EMBED;INFO;SIZE
-V-Power;Shell;shell.jpg;"<iframe src=""https://player.vimeo.com/video/291794206?autoplay=1&color=92948e&title=0&byline=0&portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";"<p><strong>INFO:</strong></p>
+TITLE,CLIENT,IMAGE,EMBED,INFO,SIZE
+V-Power,Shell,shell.jpg,"<iframe src=""https://player.vimeo.com/video/291794206?autoplay=1&color=92948e&title=0&byline=0&portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>","<p><strong>INFO:</strong></p>
 <p>Actors</p>
 <ul>
 <li>Bush</li>
 <li>Kim</li>
 <li>Jong</li>
-</ul>";full
-Bomb Pop;Trex;trex.jpg;"<iframe src=""https://player.vimeo.com/video/291794206?autoplay=1&color=92948e&title=0&byline=0&portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>";;half
-Make Room;IKEA;makeroom.jpg;"<iframe src=""https://player.vimeo.com/video/293942855?autoplay=1&amp;title=0&amp;byline=0&amp;portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>";;half
-Future Launch;Royal Bank of Canada;future_launch.jpg;"<iframe src=""https://player.vimeo.com/video/264227441?autoplay=1&amp;title=0&amp;byline=0&amp;portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>";;half
-Saxo Bank;;saxobank.jpg;"<iframe src=""https://player.vimeo.com/video/117958268?autoplay=1&amp;title=0&amp;byline=0&amp;portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>";;half
-Family;Nykredit;family.jpg;"<iframe src=""https://player.vimeo.com/video/148784828?byline=0&amp;portrait=0&amp;autoplay=1"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>";;full
-Break Free;Bravo Tours;break_free.jpg;"<iframe src=""https://player.vimeo.com/video/214167854?autoplay=1&amp;title=0&amp;byline=0&amp;portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>";;half
-Downsize;Royal Bank of Canada;downsize.jpg;"<iframe src=""https://player.vimeo.com/video/215722939?autoplay=1&amp;title=0&amp;byline=0&amp;portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>";;half
-Innovators;Standard Chartered ;innovators.jpg;"<iframe src=""https://player.vimeo.com/video/112725795?autoplay=1&amp;title=0&amp;byline=0&amp;portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>";;half
-Carpenter;Orange;carpenter.jpg;"<iframe src=""https://player.vimeo.com/video/129806263?autoplay=1&amp;byline=0&amp;portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>";;half
+</ul>",full
+Bomb Pop,Trex,trex.jpg,"<iframe src=""https://player.vimeo.com/video/291794206?autoplay=1&color=92948e&title=0&byline=0&portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",,half
+Make Room,IKEA,makeroom.jpg,"<iframe src=""https://player.vimeo.com/video/293942855?autoplay=1&amp,title=0&amp,byline=0&amp,portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>",,half
+Future Launch,Royal Bank of Canada,future_launch.jpg,"<iframe src=""https://player.vimeo.com/video/264227441?autoplay=1&amp,title=0&amp,byline=0&amp,portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>",,half
+Saxo Bank,,saxobank.jpg,"<iframe src=""https://player.vimeo.com/video/117958268?autoplay=1&amp,title=0&amp,byline=0&amp,portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>",,half
+Family,Nykredit,family.jpg,"<iframe src=""https://player.vimeo.com/video/148784828?byline=0&amp,portrait=0&amp,autoplay=1"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>",,full
+Break Free,Bravo Tours,break_free.jpg,"<iframe src=""https://player.vimeo.com/video/214167854?autoplay=1&amp,title=0&amp,byline=0&amp,portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>",,half
+Downsize,Royal Bank of Canada,downsize.jpg,"<iframe src=""https://player.vimeo.com/video/215722939?autoplay=1&amp,title=0&amp,byline=0&amp,portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>",,half
+Innovators,Standard Chartered ,innovators.jpg,"<iframe src=""https://player.vimeo.com/video/112725795?autoplay=1&amp,title=0&amp,byline=0&amp,portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>",,half
+Carpenter,Orange,carpenter.jpg,"<iframe src=""https://player.vimeo.com/video/129806263?autoplay=1&amp,byline=0&amp,portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>",,half
