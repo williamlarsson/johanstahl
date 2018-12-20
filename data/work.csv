@@ -1,11 +1,5 @@
 TITLE,CLIENT,IMAGE,EMBED,INFO,SIZE
-V-Power,Shell,shell.jpg,"<iframe src=""https://player.vimeo.com/video/291794206?autoplay=1&color=92948e&title=0&byline=0&portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>","<p><strong>INFO:</strong></p>
-<p>Actors</p>
-<ul>
-<li>Bush</li>
-<li>Kim</li>
-<li>Jong</li>
-</ul>",full
+V-Power,Shell,shell.jpg,"<iframe src=""https://player.vimeo.com/video/291794206?autoplay=1&color=92948e&title=0&byline=0&portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",,full
 Bomb Pop,Trex,trex.jpg,"<iframe src=""https://player.vimeo.com/video/291794206?autoplay=1&color=92948e&title=0&byline=0&portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",,half
 Make Room,IKEA,makeroom.jpg,"<iframe src=""https://player.vimeo.com/video/293942855?autoplay=1&amp,title=0&amp,byline=0&amp,portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>",,half
 Future Launch,Royal Bank of Canada,future_launch.jpg,"<iframe src=""https://player.vimeo.com/video/264227441?autoplay=1&amp,title=0&amp,byline=0&amp,portrait=0"" width=""640"" height=""360"" frameborder=""0"" webkitallowfullscreen="""" mozallowfullscreen="""" allowfullscreen=""""></iframe>",,half
