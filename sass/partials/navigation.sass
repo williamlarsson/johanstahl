@@ -11,6 +11,7 @@ header
 
 .header_logo    
     &_container
+        pointer-events: none
         position: absolute
         +coverall
         height: 100vh
@@ -294,7 +295,7 @@ header
             margin-left: 60px
         .scrolled-nav &,  body:not(.home) &
             &:nth-child(1)
-                margin-left: 10px
+                margin-left: -25px
             &:nth-child(2)
                 // margin-right: 50px
             &:nth-child(3)
