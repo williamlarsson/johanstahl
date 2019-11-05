@@ -1,5 +1,5 @@
 
-.home    
+.home
 .front
     opacity: 0
     transition: opacity 1s
@@ -7,22 +7,24 @@
         opacity: 1
     .second &
         // background: url('../img/octopuss_background.jpg') center / cover no-repeat
-        opacity: 1  
+        opacity: 1
     &_container
         position: relative
         top: 0
         left: 0
-        height: calc( 100vh)
+        // height: calc( 100vh)
         width: 100%
         display: flex
         justify-content: center
         align-items: center
         overflow: hidden
         margin-bottom: 40px
-        +breakpoint(md)
-            height: 60vw
+
+
         +breakpoint(sm)
-            height: 70vw
+            width: 140%
+        // +breakpoint(sm)
+        //     height: 70vw
     #front-logo
         // max-width: 80%
         max-height: calc( 70% - 120px)
@@ -32,6 +34,8 @@
         position: absolute
         top: 20%
         position: static
+        // 1585 / 891
+
         +breakpoint(xl)
         +breakpoint(md)
         	width: 80%
@@ -49,31 +53,41 @@
                 transform: scale(1)
     video, iframe
         position: absolute
-        top: 50%
-        left: 50%
-        min-width: 100%
-        min-height: 100%
-        transform: translate( -50%, -50%)
-        +breakpoint(md)
-            height: 100vw
-            width: 100vw
-            left: 50vw
-            top: 25vw
+        // top: 50%
+        // left: 50%
+        // min-width: 100%
+        // min-height: 100%
+        // transform: translate( -50%, -50%)
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        // +breakpoint(md)
+        //     height: 100vw
+        //     width: 100vw
+        //     left: 50vw
+        //     top: 25vw
     iframe
-        transform: translate( -50%, -50%) scale(1.2)
+        // transform: translate( -50%, -50%) scale(1.2)
         // transform: translate( -50%, -50%)
         +breakpoint(md)
             // top: 0
-            transform: translate( -50%, -50%)
+            // transform: translate( -50%, -50%)
     &_images
         .has-video &
             display: none
             +breakpoint(sm)
                 display: block
     &_video
-        width: 100vw
-        height: 65vw
-    &_image 
+        // width: 100vw
+        // height: 65vw
+        width: 100%;
+        overflow: hidden;
+        &:before
+            padding-top: 56.25%;
+            content: ''
+            display: block
+    &_image
         opacity: 0
         z-index: -100
         position: absolute
@@ -96,7 +110,7 @@
             h2,p,h3
                 color: $darkblue
                 display: inline-block
-                margin: 0 5px   
+                margin: 0 5px
                 text-transform: uppercase
                 line-height: 20px
             h3

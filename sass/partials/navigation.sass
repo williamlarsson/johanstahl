@@ -1,15 +1,15 @@
-        
+
 header
     z-index: 100
     // .home &
     //     opacity: 0
     .about &
         // background: $darkblue
-    .player-open & 
+    .player-open &
         opacity: 0
         z-index: -100
 
-.header_logo    
+.header_logo
     &_container
         pointer-events: none
         position: absolute
@@ -24,6 +24,7 @@ header
         opacity: 0
         animation: fadein 1s linear forwards
         mix-blend-mode: exclusion
+
         .home &
             background: black
             transition: background 1s
@@ -40,21 +41,21 @@ header
             // display: block
             // text-align: center
         +breakpoint(md)
-            height: 60vw
+            padding-top: 40px
         +breakpoint(sm)
             position: absolute !important
             // width: 60px
             // height: 60px
             margin: 0 auto
             z-index: 2000
-            top: 120px !important
+            // top: 120px !important
             background: none
             .page-template-template_archive &
                 top: 70px !important
 
         // pointer-events: none
-            
-        
+
+
     &_img
         height: 100px
         width: 100px
@@ -73,7 +74,7 @@ header
         .scrolled-logo &, body:not(.home) &
             height: 60px
             width: 60px
-                
+
             // position: fixed
             // top: 15px
             // // left: calc(50% - 30px)
@@ -100,14 +101,18 @@ header
     &_arrow-down
         margin-top: 60px
         height: 20px
-        width: 33px    
+        width: 33px
         position: relative
-        animation: pulse 0.8s infinite linear alternate-reverse
+        //animation: pulse 0.8s infinite linear alternate-reverse
         transition: opacity 1s
         opacity: 0
         +transition($delay: 1s)
         transform: translateY(50px)
         top: -40px
+        +breakpoint(md)
+            transform: translateY(20px)
+            margin-top: 0
+
         .finished &
             opacity: 1
             top: 0
@@ -122,7 +127,7 @@ header
             width: 20px
             height: 2px
             position: absolute
-            transform-origin: bottom 50% 
+            transform-origin: bottom 50%
         &:before
             transform: rotate(45deg)
             left: 0
@@ -145,7 +150,7 @@ header
         opacity: 0
         animation: fadein-down 0.5s 0.3s linear forwards
 
-// .header_logo    
+// .header_logo
 //     &_container
 //         +coverall
 //         position: absolute
@@ -188,8 +193,8 @@ header
 //             background: none
 
 //         // pointer-events: none
-            
-        
+
+
 //     &_img
 //         .home &
 //             height: 100px
@@ -212,7 +217,7 @@ header
 //             +breakpoint(sm)
 //                 height: 60px
 //                 width: 60px
-        
+
 //     &_info
 //         .home &
 //             opacity: 1
@@ -234,7 +239,7 @@ header
 //         //         opacity: 1
 //         //         visibility: visible
 //         //         height: auto
-                
+
 //     h3
 //         color: white
 //         font-size: 14px
@@ -270,18 +275,18 @@ header
             opacity: 1
         .about &
             background: none
-        
-        .player-open & 
+
+        .player-open &
             opacity: 0
             z-index: -100
-        
+
     ul
         display: flex
         flex-flow: row nowrap
-        justify-content: center 
+        justify-content: center
         // margin: 10px 0
         margin: 0
-    li      
+    li
         margin: 0 15px
         +transition
         +breakpoint(sm)
@@ -307,7 +312,7 @@ header
                 transform: translateX(60px)
                 +breakpoint(sm)
                     transform: translateX(25px)
-    // li      
+    // li
     //     margin: 0 15px
     //     +transition
     //     +breakpoint(sm)
@@ -319,7 +324,7 @@ header
     //     // &:nth-child(1)
     //     //     margin-left: 40px
     //     .home:not(.scrolled-nav) &
-    //         margin: 0 15px 
+    //         margin: 0 15px
     //         transform: none
     //     .scrolled-nav &, &
     //         &:nth-child(1)
@@ -355,7 +360,7 @@ header
             width: 97%
             +transition
             transform: scaleX(0)
-        +breakpoint(lg)            
+        +breakpoint(lg)
             &:hover
                 opacity: 1
                 &:before
@@ -375,5 +380,4 @@ header
                     @extend .caslon
                     +breakpoint(mdonly)
                         font-size: 16px
-    
-                
+

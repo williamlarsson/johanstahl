@@ -7,14 +7,14 @@ var blue = "#132A3E",
     darkblue = "#0D1B28",
     orange = "#EB5842";
 $ = jQuery;
-log = function(content) {   
+log = function(content) {
     console.log(content);
 };
 function App() {
-          
+
     var $width = $(window).width(),
         $height = $(window).height(),
-        $tablet = $width < 1025, 
+        $tablet = $width < 1025,
         $body = $('body'),
         timeline = new TimelineMax(),
         $navContainer = document.querySelector('.nav_container'),
@@ -29,7 +29,8 @@ function App() {
         // easer = 140,
         video_delay = 500,
         stopper = false,
-        frontHasVideo = innerWidth > 767 && $('.front_container').hasClass('has-video'),
+        frontHasVideo = true,
+        // frontHasVideo = innerWidth > 767 && $('.front_container').hasClass('has-video'),
         $player_close = $('.portfolio_close'),
         $player_iframe = $('.portfolio_iframe'),
         $player_title = $('.portfolio_player_title'),
@@ -64,7 +65,7 @@ function App() {
     function scrollTo(toElement) {
         $('html, body').animate({
             scrollTop: toElement.offsetTop - 40
-        },500) 
+        },500)
     }
 
     function htmlString(title,client, image, embed, info, size){
@@ -115,29 +116,32 @@ function App() {
     //     }
     // })
     if ( $body.hasClass('home') ) {
-        /*************** FRONTPAGE ***************/ 
-        var front_container = $('.front_container'), 
+        /*************** FRONTPAGE ***************/
+        var front_container = $('.front_container'),
             front_images = $('.front_image'),
             iframes_counter = 0;
 
         setTimeout(function() {
             $body.addClass('finished');
         }, 1200);
-        if ( frontHasVideo ) {   
+        if ( frontHasVideo ) {
             // froogaloop.api('getVideoUrl', function(url) {
             //     console.log('url:', url);
             // });
 
             $('.front_video').html( JSON.parse( $('.front_video').data('url') ));
-            console.log('set video')
+
+            headerLogo.style.height = $('.front_video').height() + 'px'
+
+
             // $f_front_video = $f($('.front_video').find('iframe')[0])
             // console.log($f_front_video.api)
         }
-       
+
 
         let workDataPath = './data/work.csv',
             workContainer = document.querySelector('#work>.portfolio_images');
-        
+
 
         Papa.parse(workDataPath, {
             download: true,
@@ -152,11 +156,11 @@ function App() {
         }, 200);
     }
     if ($body.hasClass('archive-page')){
-        
+
 
         let archivePath = './data/archive.csv',
             archiveContainer = document.querySelector('#archive>.portfolio_images');
-        
+
 
         Papa.parse(archivePath, {
             download: true,
@@ -164,7 +168,7 @@ function App() {
                 injectHTML(result.data, archiveContainer)
             }
         })
-        
+
     };
     // load bg images
 
@@ -181,9 +185,9 @@ function App() {
     //     }
     //     img.src = $(this).data('src')
     // });
-    
+
     function showVideo(el){
-        if ( frontHasVideo ) {   
+        if ( frontHasVideo ) {
             $f($('.front_video').find('iframe')[0]).api('pause');
         }
         var $el = $(el);
@@ -217,18 +221,18 @@ function App() {
         $body.removeClass('player-open');
         $player_iframe.html('')
         // $f($player_iframe.find('iframe')[0]).api('pause');
-        if ( frontHasVideo ) {   
+        if ( frontHasVideo ) {
             $f($('.front_video').find('iframe')[0]).api('play');
         }
     })
-    
-    
-    /*************** modernizr ***************/ 
+
+
+    /*************** modernizr ***************/
     if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 ){
         $body.addClass('firefox')
     }   else if( navigator.userAgent.toLowerCase().indexOf('chrome') > -1 ){
         $body.addClass('chrome')
-    }   
+    }
     else if( navigator.userAgent.toLowerCase().indexOf('safari') > -1 ){
         $body.addClass('safari')
     }
@@ -245,8 +249,8 @@ function App() {
 $(document).ready(function() {
     console.log('ready')
     App();
-});   
+});
 $(window).on('load',function() {
     console.log('load')
-});   
+});
 
