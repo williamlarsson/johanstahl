@@ -1,4 +1,4 @@
-var production = false,
+var production = true,
     inputCss = 'sass/main.sass',
     outputCss = 'css/',
     inputJs = './js/src/app.js',
