@@ -21,7 +21,7 @@
     "gulp-uglify": "^2.0.0",
     "gulp-uglifycss": "^1.0.6",
     "html-webpack-plugin": "^2.22.0",
-    "jquery": "^3.1.0",
+    "jquery": "^3.5.0",
     "loaders-by-extension": "^1.0.0",
     "node-sass": "^4.11.0",
     "script-loader": "^0.7.0",
