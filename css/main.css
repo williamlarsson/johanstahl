@@ -4113,7 +4113,9 @@ header {
         margin: 0 auto;
         z-index: 2000;
         background: 0;
-        top: 200px !important;
+    }
+    body.home .header_logo_container {
+      top: 160px !important;  
     }
 
     .page-template-template_archive .header_logo_container {
