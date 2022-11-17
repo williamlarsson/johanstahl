@@ -9,9 +9,9 @@
     "browser-sync": "^2.14.0",
     "browser-sync-webpack-plugin": "^1.1.2",
     "bundle-loader": "^0.5.4",
-    "css-loader": "^0.24.0",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.9.0",
+    "css-loader": "^6.7.2",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^6.2.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-if": "^2.0.2",
@@ -20,7 +20,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
     "gulp-uglifycss": "^1.0.6",
-    "html-webpack-plugin": "^2.22.0",
+    "html-webpack-plugin": "^5.5.0",
     "jquery": "^3.1.0",
     "loaders-by-extension": "^1.0.0",
     "node-sass": "^4.11.0",
@@ -28,7 +28,7 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "vimeo-froogaloop": "^0.1.0",
-    "webpack-stream": "^3.2.0"
+    "webpack-stream": "^7.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
