@@ -1,0 +1,52 @@
+@function rem($px)
+  @return $px / $base-font-size + rem
+
+@function pts($pt)
+  @return $pt * 1.3 + px
+
+@function vw($px, $viewport:1440) 
+  @return $px/($viewport/100)+vw
+
+@mixin fontsize-vw($px, $viewport:1440, $breakpoint: 1024) 
+  font-size: $px/($viewport/100)+vw
+  line-height: $px/($viewport/120)+vw
+  @media (max-width: $breakpoint * 1px)
+    font-size: $px * 1px
+    line-height: $px * 1px
+
+
+@mixin breakpoint($size)
+  @media (map-get($mediaquerries, $size))
+    @content
+
+@mixin transition($prop: all, $time: $transition, $easing: $easing, $delay: 0s )
+  transition: $prop $time $easing $delay
+
+@mixin transitionSlow($prop: all, $time: $transition2, $easing: $easing, $delay: 0s )
+  transition: $prop $time $easing $delay
+
+@mixin coverall
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+
+@mixin font-face($name, $path, $exts: eot woff2 woff ttf svg, $weight: null, $style: null)
+  $src: null
+
+  $extmods: ( eot: "?", svg: "#" + str-replace($name, " ", "_") )
+
+  $formats: (otf: "opentype", ttf: "truetype")
+
+  @each $ext in $exts 
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext)
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext)
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma)
+    
+  @font-face 
+    font-family: quote($name)
+    font-style: $style
+    font-weight: $weight
+    src: $src

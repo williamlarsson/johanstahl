@@ -1,0 +1,27 @@
+.m-scene 
+    .scene_element 
+        animation-duration: 0.25s
+        transition-timing-function: ease-in
+        animation-fill-mode: both
+        &--fadein
+            animation-name: fadeIn
+        &--fadeinup
+            animation-name: fadeInUp
+        &--fadeindown
+            animation-name: fadeInDown 
+        &--fadeinleft
+            animation-name: fadeInLeft 
+        &--fadeinright
+            animation-name: fadeInRight
+        &--delayed
+            animation-delay: 0.25s
+        &--flipinx
+            animation-name: flipInX
+        &--zoomin
+            animation-name: zoomIn 
+    &.is-exiting .scene_element 
+        animation-direction: alternate-reverse
+        animation-delay: 0s
+    &.is-exiting .scene_element--noexiting 
+        animation-direction: alternate-reverse
+

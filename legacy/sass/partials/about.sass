@@ -1,0 +1,24 @@
+.page-template-template_about
+    background: $darkblue
+    color: white
+.about
+    width: 80vw
+    margin: 0 auto
+    padding: 60px 0
+    opacity: 0
+    transform: translateY(40px)
+    +transitionSlow
+    .finished &
+        opacity: 1
+        transform: none
+    h1
+        color: #c3a3a8
+    +breakpoint(sm)
+        width: calc(100% - 40px)
+        padding-bottom: 0px
+    &_text
+        p:first-child
+            margin-top: 0
+    &_image
+        max-width: 100%
+        height: auto
