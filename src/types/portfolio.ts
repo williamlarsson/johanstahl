@@ -2,7 +2,8 @@ export interface PortfolioItem {
   title: string;
   client: string;
   image: string;
-  embed: string;
+  video: string;
+  embed?: string;
   info: string;
   size: "full" | "half";
 }

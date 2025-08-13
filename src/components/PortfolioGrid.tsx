@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { PortfolioItem } from "@/types/portfolio";
 import VideoPlayer from "./VideoPlayer";
@@ -26,6 +26,9 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
     null
   );
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
+  const [loadingVideos, setLoadingVideos] = useState<Set<number>>(new Set());
+  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleVideoClick = (item: PortfolioItem) => {
     setSelectedVideo(item);
@@ -36,6 +39,51 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
     setIsVideoOpen(false);
     setSelectedVideo(null);
   };
+
+  // Extract video ID from iframe embed string
+  const extractVideoId = (embed: string): string | null => {
+    const match = embed.match(/video\/(\d+)/);
+    return match ? match[1] : null;
+  };
+
+  // Create Vimeo poster image URL
+  const createPosterUrl = (videoId: string): string => {
+    return `https://vumbnail.com/${videoId}_large.jpg`;
+  };
+
+  // Create short preview video URL (3 seconds)
+  const createPreviewUrl = (videoId: string): string => {
+    return `https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1&loop=1&color=92948e&title=0&byline=0&portrait=0&controls=0&duration=3`;
+  };
+
+  // Handle hover start with delay
+  const handleMouseEnter = (index: number) => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    hoverTimeoutRef.current = setTimeout(() => {
+      setHoveredItem(index);
+      setLoadingVideos((prev) => new Set([...prev, index]));
+    }, 300); // 300ms delay before loading preview
+  };
+
+  // Handle hover end
+  const handleMouseLeave = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    setHoveredItem(null);
+    setLoadingVideos(new Set());
+  };
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) {
+        clearTimeout(hoverTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <Box sx={{ py: 8 }}>
@@ -53,6 +101,9 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
             // Calculate grid size based on position in the pattern
             const patternIndex = index % 3; // 0 = full, 1 = half, 2 = half
             const isFull = patternIndex === 0;
+            const isHovered = hoveredItem === index;
+            const isLoading = loadingVideos.has(index);
+            const videoId = item.embed ? extractVideoId(item.embed) : null;
 
             return (
               <Grid
@@ -73,19 +124,63 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
                     },
                   }}
                   onClick={() => handleVideoClick(item)}
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <Box sx={{ position: "relative", aspectRatio: "16/9" }}>
-                    <CardMedia
-                      component="img"
-                      height={isFull ? 400 : 300}
-                      image={`/img/${item.image}`}
-                      alt={item.title}
-                      sx={{
-                        objectFit: "cover",
-                        width: "100%",
-                        height: "100%",
-                      }}
-                    />
+                    {/* Vimeo poster image as thumbnail */}
+                    {videoId && (!isHovered || isLoading) && (
+                      <CardMedia
+                        component="img"
+                        height={isFull ? 400 : 300}
+                        image={createPosterUrl(videoId)}
+                        alt={item.title}
+                        sx={{
+                          objectFit: "cover",
+                          width: "100%",
+                          height: "100%",
+                        }}
+                      />
+                    )}
+
+                    {/* Short video preview on hover */}
+                    {isHovered && videoId && !isLoading && (
+                      <Box
+                        component="iframe"
+                        src={createPreviewUrl(videoId)}
+                        sx={{
+                          width: "100%",
+                          height: "100%",
+                          border: "none",
+                          display: "block",
+                        }}
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowFullScreen
+                        onLoad={() => {
+                          // Remove from loading state when iframe loads
+                          setLoadingVideos((prev) => {
+                            const newSet = new Set(prev);
+                            newSet.delete(index);
+                            return newSet;
+                          });
+                        }}
+                      />
+                    )}
+
+                    {/* Fallback to original image if no video */}
+                    {!videoId && (
+                      <CardMedia
+                        component="img"
+                        height={isFull ? 400 : 300}
+                        image={`/img/${item.image}`}
+                        alt={item.title}
+                        sx={{
+                          objectFit: "cover",
+                          width: "100%",
+                          height: "100%",
+                        }}
+                      />
+                    )}
 
                     {/* Text overlay */}
                     <Box
@@ -99,7 +194,9 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
                         flexDirection: "column",
                         justifyContent: "center",
                         alignItems: "center",
-                        bgcolor: "rgba(0, 0, 0, 0.7)",
+                        bgcolor: isHovered
+                          ? "transparent"
+                          : "rgba(0, 0, 0, 0.7)",
                         opacity: 0,
                         transition: "opacity 0.3s ease-in-out",
                         textAlign: "center",
