@@ -40,20 +40,14 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
     setSelectedVideo(null);
   };
 
-  // Extract video ID from iframe embed string
-  const extractVideoId = (embed: string): string | null => {
-    const match = embed.match(/video\/(\d+)/);
-    return match ? match[1] : null;
-  };
-
   // Create Vimeo poster image URL
-  const createPosterUrl = (videoId: string): string => {
-    return `https://vumbnail.com/${videoId}_large.jpg`;
+  const createPosterUrl = (vimeoId: number): string => {
+    return `https://vumbnail.com/${vimeoId}_large.jpg`;
   };
 
   // Create short preview video URL (3 seconds)
-  const createPreviewUrl = (videoId: string): string => {
-    return `https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1&loop=1&color=92948e&title=0&byline=0&portrait=0&controls=0&duration=3`;
+  const createPreviewUrl = (vimeoId: number): string => {
+    return `https://player.vimeo.com/video/${vimeoId}?autoplay=1&muted=1&loop=1&color=92948e&title=0&byline=0&portrait=0&controls=0&duration=3`;
   };
 
   // Handle hover start with delay
@@ -103,7 +97,7 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
             const isFull = patternIndex === 0;
             const isHovered = hoveredItem === index;
             const isLoading = loadingVideos.has(index);
-            const videoId = item.embed ? extractVideoId(item.embed) : null;
+            const videoId = item.vimeoId || null;
 
             return (
               <Grid

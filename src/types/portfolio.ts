@@ -3,6 +3,7 @@ export interface PortfolioItem {
   client: string;
   image: string;
   video: string;
+  vimeoId?: number;
   embed?: string;
   info: string;
   size: "full" | "half";
