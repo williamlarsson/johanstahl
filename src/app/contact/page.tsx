@@ -1,11 +1,18 @@
 import Layout from "@/components/Layout";
-import { Box, Typography, Grid, Paper, Link as MuiLink } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Grid,
+  Paper,
+  Link as MuiLink,
+  Container,
+} from "@mui/material";
 import Link from "next/link";
 
 export default function Contact() {
   return (
     <Layout>
-      <Box sx={{ py: 8 }}>
+      <Container maxWidth="xl">
         <Grid container spacing={6}>
           {/* Representation */}
           <Grid size={{ xs: 12, lg: 6 }}>
@@ -178,7 +185,7 @@ export default function Contact() {
             </Box>
           </Grid>
         </Grid>
-      </Box>
+      </Container>
     </Layout>
   );
 }

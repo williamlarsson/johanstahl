@@ -10,8 +10,13 @@ import {
   Typography,
   Box,
   Button,
-  Container,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  IconButton,
 } from "@mui/material";
+import { Menu as MenuIcon } from "@mui/icons-material";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -20,6 +25,15 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const pathname = usePathname();
   const [navOpacity, setNavOpacity] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleMobileMenuOpen = () => {
+    setMobileMenuOpen(true);
+  };
+
+  const handleMobileMenuClose = () => {
+    setMobileMenuOpen(false);
+  };
 
   useEffect(() => {
     // Fade in navigation after 1 second
@@ -37,7 +51,7 @@ export default function Layout({ children }: LayoutProps) {
   ];
 
   return (
-    <Box sx={{ minHeight: "100vh" }}>
+    <Box sx={{ minHeight: "100dvh" }}>
       <AppBar
         position="fixed"
         sx={{
@@ -111,14 +125,63 @@ export default function Layout({ children }: LayoutProps) {
 
           {/* Mobile menu button - Right side */}
           <Box sx={{ display: { xs: "block", md: "none" } }}>
-            <Button sx={{ color: "white" }}>
-              <Box component="span" sx={{ fontSize: 24 }}>
-                ☰
-              </Box>
-            </Button>
+            <IconButton onClick={handleMobileMenuOpen} sx={{ color: "white" }}>
+              <MenuIcon sx={{ fontSize: 28 }} />
+            </IconButton>
           </Box>
         </Toolbar>
       </AppBar>
+
+      {/* Mobile Menu Drawer */}
+      <Drawer
+        anchor="right"
+        open={mobileMenuOpen}
+        onClose={handleMobileMenuClose}
+        sx={{
+          "& .MuiDrawer-paper": {
+            bgcolor: "rgba(0, 0, 0, 0.95)",
+            backdropFilter: "blur(10px)",
+            width: 280,
+            border: "none",
+          },
+        }}
+      >
+        <Box sx={{ p: 3 }}>
+          <Box sx={{ mb: 4, textAlign: "center" }}>
+            <Typography variant="h6" sx={{ color: "white", fontWeight: 600 }}>
+              Menu
+            </Typography>
+          </Box>
+
+          <List sx={{ mt: 2 }}>
+            {navItems.map((item) => (
+              <ListItem
+                key={item.href}
+                component={Link}
+                href={item.href}
+                onClick={handleMobileMenuClose}
+                sx={{
+                  color: pathname === item.href ? "white" : "grey.400",
+                  borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+                  py: 2,
+                  "&:hover": {
+                    color: "white",
+                    bgcolor: "rgba(255, 255, 255, 0.05)",
+                  },
+                }}
+              >
+                <ListItemText
+                  primary={item.label}
+                  primaryTypographyProps={{
+                    fontSize: "1.1rem",
+                    fontWeight: 500,
+                  }}
+                />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Drawer>
 
       <Box component="main">{children}</Box>
     </Box>

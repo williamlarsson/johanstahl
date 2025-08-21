@@ -4,6 +4,7 @@ import { PortfolioItem } from "@/types/portfolio";
 import { useState, useEffect, useMemo, useRef } from "react";
 import { Box, Typography, Stack } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import VideoPlayer from "@/components/VideoPlayer";
 
 const videoTransitionTimer = 1000;
 const slideDuration = 4000;
@@ -25,7 +26,7 @@ const VideoElement = styled("video")({
 
 const CarouselSection = styled(Box)({
   position: "relative",
-  height: "100vh",
+  height: "100dvh",
   width: "100%",
 });
 
@@ -83,6 +84,10 @@ export default function HomePage() {
   const [prevIndex, setPrevIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [loadedVideos, setLoadedVideos] = useState<Set<number>>(new Set([0]));
+  const [selectedVideo, setSelectedVideo] = useState<PortfolioItem | null>(
+    null
+  );
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const isInitialLoad = useRef(true);
   const [showIntro, setShowIntro] = useState(true);
@@ -91,6 +96,16 @@ export default function HomePage() {
     height: 400,
   });
   const [overlayOpacity, setOverlayOpacity] = useState(1);
+
+  const handleVideoClick = (item: PortfolioItem) => {
+    setSelectedVideo(item);
+    setIsVideoOpen(true);
+  };
+
+  const handleCloseVideo = () => {
+    setIsVideoOpen(false);
+    setSelectedVideo(null);
+  };
 
   useEffect(() => {
     const updateDimensions = () => {
@@ -185,19 +200,26 @@ export default function HomePage() {
     }
 
     return () => clearTimeout(videoTimer);
-  }, [currentIndex, prevIndex, frontpageItems.length, loadedVideos]);
+  }, [currentIndex, prevIndex, frontpageItems.length]); // Removed loadedVideos dependency
 
-  // Load all videos progressively
+  // Load videos progressively - only run once
   useEffect(() => {
-    const loadAllVideos = async () => {
+    const loadVideosProgressively = async () => {
+      // Start with first video already loaded
+      const videosToLoad = [];
       for (let i = 1; i < frontpageItems.length; i++) {
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // Load with 1 second delay
-        setLoadedVideos((prev) => new Set([...prev, i]));
+        videosToLoad.push(i);
+      }
+
+      // Load videos one by one with delay
+      for (const index of videosToLoad) {
+        await new Promise((resolve) => setTimeout(resolve, 1500)); // 1.5 second delay
+        setLoadedVideos((prev) => new Set([...prev, index]));
       }
     };
 
-    loadAllVideos();
-  }, [frontpageItems.length]);
+    loadVideosProgressively();
+  }, []); // Only run once on mount
 
   return (
     <Box
@@ -278,45 +300,58 @@ export default function HomePage() {
       {/* Video Carousel */}
       <CarouselSection>
         <CarouselContainer>
-          {/* All Videos - rendered but conditionally visible */}
+          {/* Only render videos that are loaded or needed */}
           <Box>
-            {frontpageItems.map((item, index) => (
-              <VideoContainer
-                key={index}
-                sx={{
-                  opacity: index === currentIndex ? 1 : 0,
-                  filter: index === currentIndex ? "blur(0px)" : "blur(12px)",
-                  display: loadedVideos.has(index) ? "block" : "none",
-                }}
-              >
-                <VideoElement
-                  ref={(el) => {
-                    videoRefs.current[index] = el;
+            {frontpageItems.map((item, index) => {
+              // Always render current video, and next video if loaded
+              const shouldRender =
+                index === currentIndex ||
+                (loadedVideos.has(index) &&
+                  index === (currentIndex + 1) % frontpageItems.length);
+
+              if (!shouldRender) return null;
+
+              return (
+                <VideoContainer
+                  key={index}
+                  sx={{
+                    opacity: index === currentIndex ? 1 : 0,
+                    filter: index === currentIndex ? "blur(0px)" : "blur(12px)",
+                    cursor: "pointer",
                   }}
-                  src={`/videos/${item.video}`}
-                  loop
-                  muted
-                  playsInline
-                  onLoadStart={() => {
-                    if (index === 0) {
-                      console.log("First video loading started");
-                    }
-                  }}
-                  onCanPlay={() => {
-                    console.log(`Video ${index + 1} can play`);
-                    // Autoplay the first video when it's ready
-                    if (index === 0 && currentIndex === 0) {
-                      const video = videoRefs.current[index];
-                      if (video) {
-                        video.play().catch((error) => {
-                          console.log("First video autoplay failed:", error);
-                        });
+                  onClick={() => handleVideoClick(item)}
+                >
+                  <VideoElement
+                    ref={(el) => {
+                      videoRefs.current[index] = el;
+                    }}
+                    src={`/videos/${item.video}`}
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    autoPlay={index === 0}
+                    onLoadStart={() => {
+                      if (index === 0) {
+                        console.log("First video loading started");
                       }
-                    }
-                  }}
-                />
-              </VideoContainer>
-            ))}
+                    }}
+                    onCanPlay={() => {
+                      console.log(`Video ${index + 1} can play`);
+                      // Ensure first video plays when ready
+                      if (index === 0 && currentIndex === 0) {
+                        const video = videoRefs.current[index];
+                        if (video && video.paused) {
+                          video.play().catch((error) => {
+                            console.log("First video autoplay failed:", error);
+                          });
+                        }
+                      }
+                    }}
+                  />
+                </VideoContainer>
+              );
+            })}
           </Box>
           {/* Video Info - All items rendered but conditionally visible */}
           <Box
@@ -418,6 +453,13 @@ export default function HomePage() {
           </Stack>
         </CarouselContainer>
       </CarouselSection>
+
+      {/* Video Player */}
+      <VideoPlayer
+        isOpen={isVideoOpen}
+        onClose={handleCloseVideo}
+        video={selectedVideo}
+      />
     </Box>
   );
 }

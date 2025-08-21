@@ -40,11 +40,6 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
     setSelectedVideo(null);
   };
 
-  // Create Vimeo poster image URL
-  const createPosterUrl = (vimeoId: number): string => {
-    return `https://vumbnail.com/${vimeoId}_large.jpg`;
-  };
-
   // Create short preview video URL (3 seconds)
   const createPreviewUrl = (vimeoId: number): string => {
     return `https://player.vimeo.com/video/${vimeoId}?autoplay=1&muted=1&loop=1&color=92948e&title=0&byline=0&portrait=0&controls=0&duration=3`;
@@ -81,16 +76,8 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
 
   return (
     <Box sx={{ py: 8 }}>
-      {title && (
-        <Box sx={{ mb: 6, textAlign: "center" }}>
-          <Typography variant="h2" sx={{ fontWeight: "bold", color: "white" }}>
-            {title}
-          </Typography>
-        </Box>
-      )}
-
-      <Container maxWidth="xl">
-        <Grid container spacing={2}>
+      <Container sx={{ px: { lg: 4 }, maxWidth: "none !important" }}>
+        <Grid container spacing={4}>
           {items.map((item, index) => {
             // Calculate grid size based on position in the pattern
             const patternIndex = index % 3; // 0 = full, 1 = half, 2 = half
@@ -112,9 +99,10 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
                   sx={{
                     bgcolor: "grey.900",
                     cursor: "pointer",
-                    transition: "transform 0.3s ease-in-out",
+                    transition: "all 0.3s ease-in-out",
                     "&:hover": {
-                      transform: "scale(1.02)",
+                      background:
+                        "linear-gradient(0deg, black -50%, transparent)",
                     },
                   }}
                   onClick={() => handleVideoClick(item)}
@@ -122,20 +110,17 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
                   onMouseLeave={handleMouseLeave}
                 >
                   <Box sx={{ position: "relative", aspectRatio: "16/9" }}>
-                    {/* Vimeo poster image as thumbnail */}
-                    {videoId && (!isHovered || isLoading) && (
-                      <CardMedia
-                        component="img"
-                        height={isFull ? 400 : 300}
-                        image={createPosterUrl(videoId)}
-                        alt={item.title}
-                        sx={{
-                          objectFit: "cover",
-                          width: "100%",
-                          height: "100%",
-                        }}
-                      />
-                    )}
+                    {/* Use our own image instead of Vimeo thumbnail */}
+                    <CardMedia
+                      component="img"
+                      image={`/img/${item.image}`}
+                      alt={item.title}
+                      sx={{
+                        objectFit: "cover",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
 
                     {/* Short video preview on hover */}
                     {isHovered && videoId && !isLoading && (
@@ -161,21 +146,6 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
                       />
                     )}
 
-                    {/* Fallback to original image if no video */}
-                    {!videoId && (
-                      <CardMedia
-                        component="img"
-                        height={isFull ? 400 : 300}
-                        image={`/img/${item.image}`}
-                        alt={item.title}
-                        sx={{
-                          objectFit: "cover",
-                          width: "100%",
-                          height: "100%",
-                        }}
-                      />
-                    )}
-
                     {/* Text overlay */}
                     <Box
                       sx={{
@@ -188,9 +158,8 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
                         flexDirection: "column",
                         justifyContent: "center",
                         alignItems: "center",
-                        bgcolor: isHovered
-                          ? "transparent"
-                          : "rgba(0, 0, 0, 0.7)",
+                        background:
+                          "linear-gradient(0, black -50%, transparent)",
                         opacity: 0,
                         transition: "opacity 0.3s ease-in-out",
                         textAlign: "center",
@@ -206,7 +175,7 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
                         sx={{
                           color: "white",
                           mb: 1,
-                          fontSize: { xs: "1rem", md: "1.25rem" },
+                          fontSize: { xs: "1.5rem", md: "2.25rem" },
                           fontWeight: "bold",
                         }}
                       >
@@ -214,47 +183,15 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
                       </Typography>
                       {item.client && (
                         <Typography
-                          variant="body2"
+                          variant="h6"
                           sx={{
                             color: "grey.300",
-                            fontSize: { xs: "0.875rem", md: "1rem" },
+                            fontSize: { xs: "1.5rem", md: "2rem" },
                           }}
                         >
                           {item.client}
                         </Typography>
                       )}
-                    </Box>
-
-                    {/* Play button overlay */}
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        bgcolor: "rgba(0, 0, 0, 0.3)",
-                        opacity: 0,
-                        transition: "opacity 0.3s ease-in-out",
-                        "&:hover": {
-                          opacity: 1,
-                        },
-                      }}
-                    >
-                      <IconButton
-                        sx={{
-                          bgcolor: "rgba(255, 255, 255, 0.2)",
-                          backdropFilter: "blur(4px)",
-                          "&:hover": {
-                            bgcolor: "rgba(255, 255, 255, 0.3)",
-                          },
-                        }}
-                      >
-                        <PlayArrow sx={{ color: "white", fontSize: 32 }} />
-                      </IconButton>
                     </Box>
                   </Box>
                 </Card>

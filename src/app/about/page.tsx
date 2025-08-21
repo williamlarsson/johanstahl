@@ -1,25 +1,12 @@
 import Layout from "@/components/Layout";
 import Image from "next/image";
-import { Box, Typography, Grid, Button, Paper } from "@mui/material";
+import { Box, Typography, Grid, Button, Paper, Container } from "@mui/material";
 import Link from "next/link";
 
 export default function About() {
   return (
-    <Layout>
-      <Box sx={{ py: 8 }}>
-        <Typography
-          variant="h1"
-          sx={{
-            fontSize: { xs: "2.5rem", md: "3rem" },
-            fontWeight: "bold",
-            textAlign: "center",
-            color: "white",
-            mb: 8,
-          }}
-        >
-          About Johan Stahl
-        </Typography>
-
+    <Box sx={{ py: 8 }}>
+      <Container maxWidth="xl">
         <Grid container spacing={6} alignItems="flex-start">
           <Grid size={{ xs: 12, lg: 6 }}>
             <Box sx={{ position: "relative", mb: 4 }}>
@@ -84,7 +71,7 @@ export default function About() {
             </Box>
           </Grid>
         </Grid>
-      </Box>
-    </Layout>
+      </Container>
+    </Box>
   );
 }
