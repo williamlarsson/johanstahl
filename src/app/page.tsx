@@ -8,6 +8,7 @@ import VideoPlayer from "@/components/VideoPlayer";
 
 const videoTransitionTimer = 1000;
 const slideDuration = 6000;
+const introDuration = 1500;
 
 const VideoContainer = styled(Box)({
   position: "absolute",
@@ -136,7 +137,7 @@ export default function HomePage() {
     // Hide intro after 3 seconds
     const introTimer = setTimeout(() => {
       setShowIntro(false);
-    }, 1000);
+    }, introDuration);
 
     return () => clearTimeout(introTimer);
   }, []);
