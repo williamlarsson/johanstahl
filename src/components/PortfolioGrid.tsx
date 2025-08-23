@@ -97,13 +97,7 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
               >
                 <Card
                   sx={{
-                    bgcolor: "grey.900",
                     cursor: "pointer",
-                    transition: "all 0.3s ease-in-out",
-                    "&:hover": {
-                      background:
-                        "linear-gradient(0deg, black -50%, transparent)",
-                    },
                   }}
                   onClick={() => handleVideoClick(item)}
                   onMouseEnter={() => handleMouseEnter(index)}
@@ -122,30 +116,6 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
                       }}
                     />
 
-                    {/* Short video preview on hover */}
-                    {isHovered && videoId && !isLoading && (
-                      <Box
-                        component="iframe"
-                        src={createPreviewUrl(videoId)}
-                        sx={{
-                          width: "100%",
-                          height: "100%",
-                          border: "none",
-                          display: "block",
-                        }}
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        allowFullScreen
-                        onLoad={() => {
-                          // Remove from loading state when iframe loads
-                          setLoadingVideos((prev) => {
-                            const newSet = new Set(prev);
-                            newSet.delete(index);
-                            return newSet;
-                          });
-                        }}
-                      />
-                    )}
-
                     {/* Text overlay */}
                     <Box
                       sx={{
@@ -160,7 +130,7 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
                         alignItems: "center",
                         background:
                           "linear-gradient(0, black -50%, transparent)",
-                        opacity: 0,
+                        opacity: { xs: 0.8, md: 0.5 },
                         transition: "opacity 0.3s ease-in-out",
                         textAlign: "center",
                         p: 2,
