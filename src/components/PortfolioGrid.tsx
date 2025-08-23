@@ -1,34 +1,27 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
+import { useState } from "react";
 import { PortfolioItem } from "@/types/portfolio";
 import VideoPlayer from "./VideoPlayer";
 import {
   Typography,
   Box,
   Card,
-  CardContent,
   CardMedia,
-  IconButton,
   Container,
   Grid,
 } from "@mui/material";
-import { PlayArrow } from "@mui/icons-material";
 
 interface PortfolioGridProps {
   items: PortfolioItem[];
   title?: string;
 }
 
-export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
+export default function PortfolioGrid({ items }: PortfolioGridProps) {
   const [selectedVideo, setSelectedVideo] = useState<PortfolioItem | null>(
     null
   );
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
-  const [loadingVideos, setLoadingVideos] = useState<Set<number>>(new Set());
-  const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleVideoClick = (item: PortfolioItem) => {
     setSelectedVideo(item);
@@ -40,40 +33,6 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
     setSelectedVideo(null);
   };
 
-  // Create short preview video URL (3 seconds)
-  const createPreviewUrl = (vimeoId: number): string => {
-    return `https://player.vimeo.com/video/${vimeoId}?autoplay=1&muted=1&loop=1&color=92948e&title=0&byline=0&portrait=0&controls=0&duration=3`;
-  };
-
-  // Handle hover start with delay
-  const handleMouseEnter = (index: number) => {
-    if (hoverTimeoutRef.current) {
-      clearTimeout(hoverTimeoutRef.current);
-    }
-    hoverTimeoutRef.current = setTimeout(() => {
-      setHoveredItem(index);
-      setLoadingVideos((prev) => new Set([...prev, index]));
-    }, 300); // 300ms delay before loading preview
-  };
-
-  // Handle hover end
-  const handleMouseLeave = () => {
-    if (hoverTimeoutRef.current) {
-      clearTimeout(hoverTimeoutRef.current);
-    }
-    setHoveredItem(null);
-    setLoadingVideos(new Set());
-  };
-
-  // Cleanup timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (hoverTimeoutRef.current) {
-        clearTimeout(hoverTimeoutRef.current);
-      }
-    };
-  }, []);
-
   return (
     <Box sx={{ py: 8 }}>
       <Container sx={{ px: { lg: 4 }, maxWidth: "none !important" }}>
@@ -82,9 +41,6 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
             // Calculate grid size based on position in the pattern
             const patternIndex = index % 3; // 0 = full, 1 = half, 2 = half
             const isFull = patternIndex === 0;
-            const isHovered = hoveredItem === index;
-            const isLoading = loadingVideos.has(index);
-            const videoId = item.vimeoId || null;
 
             return (
               <Grid
@@ -100,8 +56,6 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
                     cursor: "pointer",
                   }}
                   onClick={() => handleVideoClick(item)}
-                  onMouseEnter={() => handleMouseEnter(index)}
-                  onMouseLeave={handleMouseLeave}
                 >
                   <Box sx={{ position: "relative", aspectRatio: "16/9" }}>
                     {/* Use our own image instead of Vimeo thumbnail */}

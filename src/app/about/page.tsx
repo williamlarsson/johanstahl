@@ -1,11 +1,9 @@
-import Layout from "@/components/Layout";
 import Image from "next/image";
 import {
   Box,
   Typography,
   Grid,
   Button,
-  Paper,
   Container,
   List,
   ListItem,
