@@ -7,7 +7,7 @@ import { styled } from "@mui/material/styles";
 import VideoPlayer from "@/components/VideoPlayer";
 
 const videoTransitionTimer = 1000;
-const slideDuration = 4000;
+const slideDuration = 6000;
 
 const VideoContainer = styled(Box)({
   position: "absolute",
