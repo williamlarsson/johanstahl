@@ -45,7 +45,7 @@ export default function Layout({ children }: LayoutProps) {
   }, []);
 
   const navItems = [
-    { href: "/work", label: "Work" },
+    { href: "/all-work", label: "All Work" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
