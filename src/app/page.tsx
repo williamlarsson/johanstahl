@@ -98,6 +98,28 @@ export default function HomePage() {
   });
   const [overlayOpacity, setOverlayOpacity] = useState(1);
 
+  // Add CSS keyframes for text animation
+  useEffect(() => {
+    const style = document.createElement("style");
+    style.textContent = `
+      @keyframes fadeInScale {
+        0% {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   const handleVideoClick = (item: PortfolioItem) => {
     setSelectedVideo(item);
     setIsVideoOpen(true);
@@ -262,7 +284,7 @@ export default function HomePage() {
         {/* Masked Video Background */}
         <MaskedVideo>
           <VideoElement
-            src={`/videos/${frontpageItems[0].video}`}
+            src={"/videos/intro.mp4"}
             autoPlay
             loop
             muted
@@ -281,14 +303,49 @@ export default function HomePage() {
               <rect x="0" y="0" width="100%" height="100%" fill="black" />
               <text
                 x={windowDimensions.width / 2}
-                y={windowDimensions.height / 2}
+                y={
+                  windowDimensions.height / 2 -
+                  Math.min(
+                    windowDimensions.width * 0.08,
+                    windowDimensions.height * 0.12
+                  )
+                }
                 textAnchor="middle"
                 fontSize={Math.min(
-                  windowDimensions.width * 0.08,
-                  windowDimensions.height * 0.15
+                  windowDimensions.width * 0.1,
+                  windowDimensions.height * 0.18
                 )}
                 fontWeight="900"
                 fill="black"
+                style={{
+                  opacity: 0,
+                  transformOrigin: "center",
+                  animation: "fadeInScale 0.8s ease-out 0.3s forwards",
+                }}
+              >
+                DIRECTOR
+              </text>
+              <text
+                x={windowDimensions.width / 2}
+                y={
+                  windowDimensions.height / 2 +
+                  Math.min(
+                    windowDimensions.width * 0.08,
+                    windowDimensions.height * 0.12
+                  )
+                }
+                textAnchor="middle"
+                fontSize={Math.min(
+                  windowDimensions.width * 0.12,
+                  windowDimensions.height * 0.2
+                )}
+                fontWeight="900"
+                fill="black"
+                style={{
+                  opacity: 0,
+                  transformOrigin: "center",
+                  animation: "fadeInScale 1s ease-out 0.2s forwards",
+                }}
               >
                 JOHAN STAHL
               </text>
