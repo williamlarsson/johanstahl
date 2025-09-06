@@ -8,7 +8,7 @@ import VideoPlayer from "@/components/VideoPlayer";
 
 const videoTransitionTimer = 1000;
 const slideDuration = 6000;
-const introDuration = 1500;
+const introDuration = 1200;
 
 const VideoContainer = styled(Box)({
   position: "absolute",
@@ -315,12 +315,12 @@ export default function HomePage() {
                   windowDimensions.width * 0.1,
                   windowDimensions.height * 0.18
                 )}
-                fontWeight="900"
+                fontWeight="300"
                 fill="black"
                 style={{
                   opacity: 0,
                   transformOrigin: "center",
-                  animation: "fadeInScale 0.8s ease-out 0.3s forwards",
+                  animation: "fadeInScale 0.6s ease-out 0.2s forwards",
                 }}
               >
                 DIRECTOR
@@ -339,12 +339,12 @@ export default function HomePage() {
                   windowDimensions.width * 0.12,
                   windowDimensions.height * 0.2
                 )}
-                fontWeight="900"
+                fontWeight="300"
                 fill="black"
                 style={{
                   opacity: 0,
                   transformOrigin: "center",
-                  animation: "fadeInScale 1s ease-out 0.2s forwards",
+                  animation: "fadeInScale 0.6s ease-out 0.4s forwards",
                 }}
               >
                 JOHAN STAHL

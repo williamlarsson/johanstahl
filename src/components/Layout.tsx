@@ -71,6 +71,10 @@ export default function Layout({ children }: LayoutProps) {
                 alignItems: "center",
                 gap: 2,
                 cursor: "pointer",
+                transition: "transform 0.2s ease-in-out",
+                "&:hover": {
+                  transform: "scale(1.1)",
+                },
               }}
             >
               <Box sx={{ position: "relative", width: 48, height: 48 }}>
@@ -80,21 +84,6 @@ export default function Layout({ children }: LayoutProps) {
                   fill
                   style={{ objectFit: "contain" }}
                 />
-              </Box>
-              <Box sx={{ display: { xs: "none", md: "block" } }}>
-                <Typography
-                  variant="caption"
-                  sx={{
-                    color: "grey.400",
-                    textTransform: "uppercase",
-                    letterSpacing: 1,
-                  }}
-                >
-                  Director
-                </Typography>
-                <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                  Johan Stahl
-                </Typography>
               </Box>
             </Box>
           </Link>
