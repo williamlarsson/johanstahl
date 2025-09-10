@@ -28,6 +28,7 @@
     "client": "CADBURY",
     "image": "cadbury.jpg",
     "gif": "cadbury.gif",
+    "video": "cadbury.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/718056977?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 718056977,
     "info": ""
@@ -37,6 +38,7 @@
     "client": "nemlig.com",
     "image": "police.jpg",
     "gif": "nemlig.gif",
+    "video": "nemlig.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/592201563?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 592201563,
     "info": ""
@@ -46,6 +48,7 @@
     "client": "ARBEITERKAMMER",
     "image": "arbeiterkammer.jpg",
     "gif": "arbeiterkammer.gif",
+    "video": "arbeiterkammer.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/439030328?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 439030328,
     "info": ""
@@ -55,6 +58,7 @@
     "client": "Jack & Jones",
     "image": "jack.jpg",
     "gif": "jack_and_jones.gif",
+    "video": "jack_and_jones.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/329886247?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 329886247,
     "info": ""
@@ -64,6 +68,7 @@
     "client": "Shell",
     "image": "shell.jpg",
     "gif": "shell_vpower.gif",
+    "video": "shell_vpower.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/275942923?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 275942923,
     "info": ""
@@ -73,6 +78,7 @@
     "client": "DNB EIENDOM",
     "image": "dnb.jpg",
     "gif": "dnb_eiendom.gif",
+    "video": "dnb_eiendom.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/891470396?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 891470396,
     "info": ""
@@ -82,6 +88,7 @@
     "client": "OMO",
     "image": "omo.jpg",
     "gif": "omo.gif",
+    "video": "omo.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/314659607?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 314659607,
     "info": ""
@@ -99,6 +106,7 @@
     "client": "IKEA",
     "image": "ikea.jpg",
     "gif": "ikea_make_room.gif",
+    "video": "ikea_make_room.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/299052423?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 299052423,
     "info": ""
@@ -108,6 +116,7 @@
     "client": "Nykredit",
     "image": "young.jpg",
     "gif": "nykredit_young.gif",
+    "video": "nykredit_young.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/129760765?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 129760765,
     "info": ""
@@ -117,6 +126,7 @@
     "client": "Trex",
     "image": "trex.jpg",
     "gif": "trex.gif",
+    "video": "trex.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/290064191?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 290064191,
     "info": ""
@@ -142,6 +152,7 @@
     "client": "",
     "image": "saxobank.jpg",
     "gif": "saxo_bank.gif",
+    "video": "saxo_bank.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/117958268?autoplay=1&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 117958268,
     "info": ""
@@ -151,6 +162,7 @@
     "client": "Nykredit",
     "image": "family.jpg",
     "gif": "nykredit_family.gif",
+    "video": "nykredit_family.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/148784828?byline=0&portrait=0&autoplay=1\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 148784828,
     "info": ""
@@ -160,6 +172,7 @@
     "client": "Bravo Tours",
     "image": "break_free.jpg",
     "gif": "bravo_tours.gif",
+    "video": "bravo_tours.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/214167854?autoplay=1&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 214167854,
     "info": ""
@@ -169,6 +182,7 @@
     "client": "Royal Bank of Canada",
     "image": "downsize.jpg",
     "gif": "royal_bank_downsize.gif",
+    "video": "royal_bank_downsize.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/215722939?autoplay=1&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 215722939,
     "info": ""
@@ -178,6 +192,7 @@
     "client": "Standard Chartered",
     "image": "innovators.jpg",
     "gif": "standard_chartered_innovators.gif",
+    "video": "standard_chartered_innovators.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/112725795?autoplay=1&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 112725795,
     "info": ""
@@ -187,6 +202,7 @@
     "client": "Orange",
     "image": "carpenter.jpg",
     "gif": "orange.gif",
+    "video": "orange.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/129806263?autoplay=1&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 129806263,
     "info": ""
@@ -196,6 +212,7 @@
     "client": "",
     "image": "pacifier.jpg",
     "gif": "pacifier.gif",
+    "video": "pacifier.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/98174992?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 98174992,
     "info": ""
@@ -205,6 +222,7 @@
     "client": "IKEA",
     "image": "prank.jpg",
     "gif": "ikea_prank.gif",
+    "video": "ikea_prank.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/299854482?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 299854482,
     "info": ""
@@ -214,6 +232,7 @@
     "client": "Nykredit",
     "image": "senior.jpg",
     "gif": "nykredit_seniors.gif",
+    "video": "nykredit_seniors.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/129779139?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 129779139,
     "info": ""
@@ -223,6 +242,7 @@
     "client": "Danish Defence",
     "image": "flight.jpg",
     "gif": "danish_defence_flight.gif",
+    "video": "danish_defence_flight.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/78943070?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 78943070,
     "info": ""
@@ -232,6 +252,7 @@
     "client": "IKEA",
     "image": "samy.jpg",
     "gif": "ikea_proposal.gif",
+    "video": "ikea_proposal.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/332339942?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 332339942,
     "info": ""
@@ -241,6 +262,7 @@
     "client": "TCTU",
     "image": "sam.jpg",
     "gif": "tctu_hello_sam.gif",
+    "video": "tctu_hello_sam.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/123628920?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 123628920,
     "info": ""
@@ -250,6 +272,7 @@
     "client": "IKEA",
     "image": "billy.jpg",
     "gif": "ikea_billy.gif",
+    "video": "ikea_billy.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/307039260?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 307039260,
     "info": ""
@@ -259,6 +282,7 @@
     "client": "Standard Chartered Bank",
     "image": "ufo.jpg",
     "gif": "standard_chartered_achievers.gif",
+    "video": "standard_chartered_achievers.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/114954187?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 114954187,
     "info": ""
@@ -268,6 +292,7 @@
     "client": "Dear Leader",
     "image": "leader.jpg",
     "gif": "dear_leader.gif",
+    "video": "dear_leader.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/249064934?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 249064934,
     "info": ""
@@ -277,6 +302,7 @@
     "client": "Engineer the Future",
     "image": "future.jpg",
     "gif": "engineers.gif",
+    "video": "engineers.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/118141419?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 118141419,
     "info": ""
@@ -295,6 +321,7 @@
     "client": "Royal Bank of Canada",
     "image": "change.jpg",
     "gif": "royal_bank_change.gif",
+    "video": "royal_bank_change.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/215719286?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 215719286,
     "info": ""
@@ -304,6 +331,7 @@
     "client": "IKEA",
     "image": "baby.jpg",
     "gif": "ikea_baby.gif",
+    "video": "ikea_baby.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/202025729?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 202025729,
     "info": ""
@@ -313,6 +341,7 @@
     "client": "SWIPP",
     "image": "swipp.jpg",
     "gif": "swipp.gif",
+    "video": "swipp.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/163738387?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 163738387,
     "info": ""
@@ -322,6 +351,7 @@
     "client": "Standard Chartered Bank",
     "image": "generation.jpg",
     "gif": "standard_chartered_generations.gif",
+    "video": "standard_chartered_generations.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/112581023?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 112581023,
     "info": ""
@@ -331,6 +361,7 @@
     "client": "Tuborg",
     "image": "tuborg.jpg",
     "gif": "tuborg_spinning.gif",
+    "video": "tuborg_spinning.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/79028640?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 79028640,
     "info": ""
@@ -340,6 +371,7 @@
     "client": "General Electric",
     "image": "power.jpg",
     "gif": "general_electric.gif",
+    "video": "general_electric.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/78943601?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 78943601,
     "info": ""
@@ -349,6 +381,7 @@
     "client": "Danish Defence",
     "image": "sirius.jpg",
     "gif": "danish_defence_sirius.gif",
+    "video": "danish_defence_sirius.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/78943466?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 78943466,
     "info": ""

@@ -10,15 +10,13 @@ import {
   CardMedia,
   Container,
   Grid,
-  Divider,
 } from "@mui/material";
 
 interface PortfolioGridProps {
   items: PortfolioItem[];
-  title?: string;
 }
 
-export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
+export default function PortfolioGrid({ items }: PortfolioGridProps) {
   const [selectedVideo, setSelectedVideo] = useState<PortfolioItem | null>(
     null
   );
@@ -62,16 +60,32 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
                   onClick={() => handleVideoClick(item)}
                 >
                   <Box sx={{ position: "relative", aspectRatio: "16/9" }}>
-                    <CardMedia
-                      component="img"
-                      image={`/img/${item.image}`}
-                      alt={item.title}
-                      sx={{
-                        objectFit: "cover",
-                        width: "100%",
-                        height: "100%",
-                      }}
-                    />
+                    {item.video ? (
+                      <Box
+                        component="video"
+                        src={`/workvideos/${item.video}`}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        sx={{
+                          objectFit: "cover",
+                          width: "100%",
+                          height: "100%",
+                        }}
+                      />
+                    ) : (
+                      <CardMedia
+                        component="img"
+                        image={`/img/${item.image}`}
+                        alt={item.title}
+                        sx={{
+                          objectFit: "cover",
+                          width: "100%",
+                          height: "100%",
+                        }}
+                      />
+                    )}
 
                     {/* Text overlay */}
                     <Box

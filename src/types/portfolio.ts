@@ -2,11 +2,11 @@ export interface PortfolioItem {
   title: string;
   client: string;
   image: string;
-  video: string;
+  video?: string;
+  gif?: string;
   vimeoId?: number;
   embed?: string;
   info: string;
-  size: "full" | "half";
 }
 
 export interface VideoPlayerProps {
