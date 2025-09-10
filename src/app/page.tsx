@@ -120,8 +120,9 @@ export default function HomePage() {
     };
   }, []);
 
-  const handleVideoClick = (item: PortfolioItem) => {
-    setSelectedVideo(item);
+  const handleVideoClick = (index: number) => {
+    console.log("index", index);
+    setSelectedVideo(frontpageItems[index - 1]);
     setIsVideoOpen(true);
   };
 
@@ -377,7 +378,7 @@ export default function HomePage() {
                     filter: index === currentIndex ? "blur(0px)" : "blur(12px)",
                     cursor: "pointer",
                   }}
-                  onClick={() => handleVideoClick(item)}
+                  onClick={() => handleVideoClick(index)}
                 >
                   <VideoElement
                     ref={(el) => {
@@ -389,13 +390,7 @@ export default function HomePage() {
                     playsInline
                     preload="metadata"
                     autoPlay={index === 0}
-                    onLoadStart={() => {
-                      if (index === 0) {
-                        console.log("First video loading started");
-                      }
-                    }}
                     onCanPlay={() => {
-                      console.log(`Video ${index + 1} can play`);
                       // Ensure first video plays when ready
                       if (index === 0 && currentIndex === 0) {
                         const video = videoRefs.current[index];
@@ -447,7 +442,7 @@ export default function HomePage() {
                 <Typography
                   variant="h3"
                   sx={{
-                    fontWeight: 700,
+                    fontWeight: 300,
                     fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3.5rem" },
                     lineHeight: 1.2,
                     mb: 1,
@@ -459,7 +454,7 @@ export default function HomePage() {
                   variant="h3"
                   sx={{
                     fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
-                    fontWeight: 700,
+                    fontWeight: 300,
                     color: "rgba(255, 255, 255, 0.8)",
                   }}
                 >

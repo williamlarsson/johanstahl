@@ -47,7 +47,7 @@ export default function Layout({ children }: LayoutProps) {
   const navItems = [
     { href: "/all-work", label: "All Work" },
     { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
+    // { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -104,6 +104,7 @@ export default function Layout({ children }: LayoutProps) {
                     "&:hover": {
                       color: "grey.300",
                     },
+                    fontSize: "1rem",
                   }}
                 >
                   {item.label}
