@@ -6,9 +6,9 @@ import { Box, Typography, Stack } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import VideoPlayer from "@/components/VideoPlayer";
 
-const videoTransitionTimer = 1000;
-const slideDuration = 6000;
-const introDuration = 1600;
+const videoTransitionTimer = 2000;
+const slideDuration = 5000;
+const introDuration = 1500;
 
 const VideoContainer = styled(Box)({
   position: "absolute",
@@ -289,7 +289,7 @@ export default function HomePage() {
         {/* Masked Video Background */}
         <MaskedVideo>
           <VideoElement
-            src={"/videos/shell.mp4"}
+            src={`/videos/${frontpageItems[0].video}`}
             autoPlay
             loop
             muted

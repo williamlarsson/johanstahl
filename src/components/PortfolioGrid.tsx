@@ -31,12 +31,13 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
       <Container sx={{ px: { lg: 4 }, maxWidth: "none !important" }}>
         {title && (
           <Typography
-            variant="h2"
+            variant="h1"
             sx={{
-              textAlign: "center",
-              mb: 6,
-              fontWeight: 300,
-              letterSpacing: "4px",
+              position: "absolute",
+              left: "-10000px",
+              width: "1px",
+              height: "1px",
+              overflow: "hidden",
             }}
           >
             {title}

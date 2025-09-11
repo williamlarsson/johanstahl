@@ -24,6 +24,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const pathname = usePathname();
+  console.log("🔍 pathname → ", pathname);
   const [navOpacity, setNavOpacity] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -51,6 +52,10 @@ export default function Layout({ children }: LayoutProps) {
     { href: "/about", label: "About" },
     // { href: "/contact", label: "Contact" },
   ];
+
+  const navIsActive = (href: string) => {
+    return pathname.replaceAll("/", "") === href.replaceAll("/", "");
+  };
 
   return (
     <Box sx={{ minHeight: "100dvh" }}>
@@ -100,13 +105,18 @@ export default function Layout({ children }: LayoutProps) {
               >
                 <Button
                   sx={{
-                    color: pathname === item.href ? "white" : "grey.400",
-                    borderBottom:
-                      pathname === item.href ? "1px solid white" : "none",
+                    color: navIsActive(item.href) ? "white" : "grey.400",
+                    borderBottom: navIsActive(item.href)
+                      ? "2px solid white"
+                      : "2px solid transparent",
+                    borderRadius: 0,
+                    transition: "all 0.3s ease",
                     "&:hover": {
                       color: "grey.300",
+                      borderBottom: "2px solid grey.500",
                     },
                     fontSize: "1rem",
+                    textTransform: "none",
                   }}
                 >
                   {item.label}
@@ -153,12 +163,17 @@ export default function Layout({ children }: LayoutProps) {
                 href={item.href}
                 onClick={handleMobileMenuClose}
                 sx={{
-                  color: pathname === item.href ? "white" : "grey.400",
+                  color: navIsActive(item.href) ? "white" : "grey.400",
                   borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+                  borderLeft: navIsActive(item.href)
+                    ? "3px solid white"
+                    : "3px solid transparent",
                   py: 2,
+                  transition: "all 0.3s ease",
                   "&:hover": {
                     color: "white",
                     bgcolor: "rgba(255, 255, 255, 0.05)",
+                    borderLeft: "3px solid grey.500",
                   },
                 }}
               >

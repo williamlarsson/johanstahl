@@ -103,6 +103,7 @@ export default function About() {
             <Button
               component={Link}
               href="/uploads/2017/04/DIRECTOR-BIO-JOHAN-STAHL.pdf"
+              target="_blank"
               variant="contained"
               sx={{
                 bgcolor: "rgba(255, 255, 255, 0.1)",
