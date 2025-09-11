@@ -1,29 +1,5 @@
 [
   {
-    "title": "STAY FOREVER",
-    "client": "Trailer",
-    "image": "stay_forever.jpg",
-    "embed": "<iframe src=\"https://player.vimeo.com/video/1010888893?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
-    "vimeoId": 1010888893,
-    "info": ""
-  },
-  {
-    "title": "A Crab & A Pipe",
-    "client": "Röyksopp",
-    "image": "royksopp.jpg",
-    "embed": "<iframe src=\"https://player.vimeo.com/video/725440324?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
-    "vimeoId": 725440324,
-    "info": ""
-  },
-  {
-    "title": "Our greatest curiosity",
-    "client": "Lexus",
-    "image": "lexus.jpg",
-    "embed": "<iframe src=\"https://player.vimeo.com/video/368611569?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
-    "vimeoId": 368611569,
-    "info": ""
-  },
-  {
     "title": "Bus Ride",
     "client": "CADBURY",
     "image": "cadbury.jpg",
@@ -34,26 +10,6 @@
     "info": ""
   },
   {
-    "title": "POLICE",
-    "client": "nemlig.com",
-    "image": "police.jpg",
-    "gif": "nemlig.gif",
-    "video": "nemlig.mp4",
-    "embed": "<iframe src=\"https://player.vimeo.com/video/592201563?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
-    "vimeoId": 592201563,
-    "info": ""
-  },
-  {
-    "title": "100 YEARS OF JUSTICE",
-    "client": "ARBEITERKAMMER",
-    "image": "arbeiterkammer.jpg",
-    "gif": "arbeiterkammer.gif",
-    "video": "arbeiterkammer.mp4",
-    "embed": "<iframe src=\"https://player.vimeo.com/video/439030328?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
-    "vimeoId": 439030328,
-    "info": ""
-  },
-  {
     "title": "No Dresscode",
     "client": "Jack & Jones",
     "image": "jack.jpg",
@@ -61,16 +17,6 @@
     "video": "jack_and_jones.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/329886247?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 329886247,
-    "info": ""
-  },
-  {
-    "title": "V-Power",
-    "client": "Shell",
-    "image": "shell.jpg",
-    "gif": "shell_vpower.gif",
-    "video": "shell_vpower.mp4",
-    "embed": "<iframe src=\"https://player.vimeo.com/video/275942923?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
-    "vimeoId": 275942923,
     "info": ""
   },
   {
@@ -91,14 +37,6 @@
     "video": "omo.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/314659607?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 314659607,
-    "info": ""
-  },
-  {
-    "title": "Power of Ideas",
-    "client": "Newport Beach Film Festival",
-    "image": "newport.jpg",
-    "embed": "<iframe src=\"https://player.vimeo.com/video/336208245?autoplay=1&color=92948e&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
-    "vimeoId": 336208245,
     "info": ""
   },
   {
@@ -175,16 +113,6 @@
     "video": "bravo_tours.mp4",
     "embed": "<iframe src=\"https://player.vimeo.com/video/214167854?autoplay=1&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
     "vimeoId": 214167854,
-    "info": ""
-  },
-  {
-    "title": "Downsize",
-    "client": "Royal Bank of Canada",
-    "image": "downsize.jpg",
-    "gif": "royal_bank_downsize.gif",
-    "video": "royal_bank_downsize.mp4",
-    "embed": "<iframe src=\"https://player.vimeo.com/video/215722939?autoplay=1&title=0&byline=0&portrait=0\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
-    "vimeoId": 215722939,
     "info": ""
   },
   {

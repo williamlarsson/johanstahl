@@ -3,14 +3,7 @@
 import { useState } from "react";
 import { PortfolioItem } from "@/types/portfolio";
 import VideoPlayer from "./VideoPlayer";
-import {
-  Typography,
-  Box,
-  Card,
-  CardMedia,
-  Container,
-  Grid,
-} from "@mui/material";
+import { Typography, Box, CardMedia, Container, Grid } from "@mui/material";
 
 interface PortfolioGridProps {
   items: PortfolioItem[];
@@ -63,104 +56,99 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
                   md: isFull ? 12 : 6,
                 }}
               >
-                <Card
+                <Box
                   sx={{
                     cursor: "pointer",
-                    transition: "box-shadow 0.2s ease-in-out",
-                    "&:hover": {
-                      boxShadow: "0 8px 25px rgba(0,0,0,0.3)",
-                    },
+                    position: "relative",
+                    aspectRatio: "16/9",
                   }}
                   onClick={() => handleVideoClick(item)}
                 >
-                  <Box sx={{ position: "relative", aspectRatio: "16/9" }}>
-                    {item.video ? (
-                      <Box
-                        component="video"
-                        src={`/workvideos/${item.video}`}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        sx={{
-                          objectFit: "cover",
-                          width: "100%",
-                          height: "100%",
-                        }}
-                      />
-                    ) : (
-                      <CardMedia
-                        component="img"
-                        image={`/img/${item.image}`}
-                        alt={item.title}
-                        sx={{
-                          objectFit: "cover",
-                          width: "100%",
-                          height: "100%",
-                        }}
-                      />
-                    )}
-
-                    {/* Text overlay */}
+                  {item.video ? (
                     <Box
+                      component="video"
+                      src={`/workvideos/${item.video}`}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
                       sx={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        gap: 1,
-                        background:
-                          "linear-gradient(0, black -50%, transparent)",
-                        opacity: { xs: 0.8, md: 0.5 },
-                        transition: "opacity 0.3s ease-in-out",
-                        textAlign: "center",
-                        p: 2,
-                        zIndex: 2,
-                        "&:hover": {
-                          opacity: 1,
+                        objectFit: "cover",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  ) : (
+                    <CardMedia
+                      component="img"
+                      image={`/img/${item.image}`}
+                      alt={item.title}
+                      sx={{
+                        objectFit: "cover",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  )}
+
+                  {/* Text overlay */}
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: 1,
+                      background: "linear-gradient(0, black -50%, transparent)",
+                      opacity: { xs: 0.8, md: 0.5 },
+                      transition: "opacity 0.3s ease-in-out",
+                      textAlign: "center",
+                      p: 2,
+                      zIndex: 2,
+                      "&:hover": {
+                        opacity: 1,
+                      },
+                    }}
+                  >
+                    <Typography
+                      variant="h6"
+                      sx={{
+                        color: "white",
+
+                        fontSize: {
+                          xs: "1.25rem",
+                          sm: "1.5rem",
                         },
+                        letterSpacing: "4px",
+                        fontWeight: 100,
                       }}
                     >
+                      {item.title.toUpperCase()}
+                    </Typography>
+
+                    {item.client && (
                       <Typography
                         variant="h6"
                         sx={{
-                          color: "white",
-
+                          color: "grey.300",
                           fontSize: {
-                            xs: "1.25rem",
-                            sm: "1.5rem",
+                            xs: "1rem",
+                            sm: "1.25rem",
                           },
                           letterSpacing: "4px",
                           fontWeight: 100,
                         }}
                       >
-                        {item.title.toUpperCase()}
+                        {item.client.toUpperCase()}
                       </Typography>
-
-                      {item.client && (
-                        <Typography
-                          variant="h6"
-                          sx={{
-                            color: "grey.300",
-                            fontSize: {
-                              xs: "1rem",
-                              sm: "1.25rem",
-                            },
-                            letterSpacing: "4px",
-                            fontWeight: 100,
-                          }}
-                        >
-                          {item.client.toUpperCase()}
-                        </Typography>
-                      )}
-                    </Box>
+                    )}
                   </Box>
-                </Card>
+                </Box>
               </Grid>
             );
           })}

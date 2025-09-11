@@ -45,7 +45,9 @@ export default function Layout({ children }: LayoutProps) {
   }, []);
 
   const navItems = [
+    { href: "/", label: "Featured Work" },
     { href: "/all-work", label: "All Work" },
+    { href: "/narrative-music", label: "Narrative & Music Videos" },
     { href: "/about", label: "About" },
     // { href: "/contact", label: "Contact" },
   ];

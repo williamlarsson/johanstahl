@@ -8,7 +8,7 @@ import VideoPlayer from "@/components/VideoPlayer";
 
 const videoTransitionTimer = 1000;
 const slideDuration = 6000;
-const introDuration = 1200;
+const introDuration = 1600;
 
 const VideoContainer = styled(Box)({
   position: "absolute",
@@ -289,7 +289,7 @@ export default function HomePage() {
         {/* Masked Video Background */}
         <MaskedVideo>
           <VideoElement
-            src={"/videos/intro.mp4"}
+            src={"/videos/shell.mp4"}
             autoPlay
             loop
             muted
