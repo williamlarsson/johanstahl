@@ -8,7 +8,8 @@ export default function HeroSection() {
   const videoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
+    const videoElement = videoRef.current;
+    if (videoElement) {
       const iframe = document.createElement("iframe");
       iframe.src =
         "https://player.vimeo.com/video/294533749?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1";
@@ -20,11 +21,11 @@ export default function HeroSection() {
       iframe.style.border = "none";
       iframe.allow = "autoplay; fullscreen";
 
-      videoRef.current.appendChild(iframe);
+      videoElement.appendChild(iframe);
 
       return () => {
-        if (videoRef.current) {
-          videoRef.current.innerHTML = "";
+        if (videoElement) {
+          videoElement.innerHTML = "";
         }
       };
     }

@@ -169,10 +169,14 @@ export default function HomePage() {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => {
+      setCurrentIndex((prevCurrentIndex) => {
         const newIndex =
-          prevIndex === frontpageItems.length - 1 ? 0 : prevIndex + 1;
-        console.log("Auto-advancing from", prevIndex, "to", newIndex);
+          prevCurrentIndex === frontpageItems.length - 1
+            ? 0
+            : prevCurrentIndex + 1;
+        console.log("Auto-advancing from", prevCurrentIndex, "to", newIndex);
+        // Update prevIndex state
+        setPrevIndex(prevCurrentIndex);
         // Mark that initial load is complete after first auto-advance
         if (isInitialLoad.current) {
           isInitialLoad.current = false;
@@ -224,7 +228,7 @@ export default function HomePage() {
     }
 
     return () => clearTimeout(videoTimer);
-  }, [currentIndex, prevIndex, frontpageItems.length]); // Removed loadedVideos dependency
+  }, [currentIndex, prevIndex, frontpageItems.length, loadedVideos]);
 
   // Load videos progressively - only run once
   useEffect(() => {
@@ -243,7 +247,7 @@ export default function HomePage() {
     };
 
     loadVideosProgressively();
-  }, []); // Only run once on mount
+  }, [frontpageItems.length]); // Run when frontpageItems.length changes
 
   return (
     <Box
@@ -496,6 +500,7 @@ export default function HomePage() {
                   },
                 }}
                 onClick={() => {
+                  setPrevIndex(currentIndex);
                   setCurrentIndex(index);
                   setIsAutoPlaying(false);
                 }}

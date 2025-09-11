@@ -14,9 +14,10 @@ import {
 
 interface PortfolioGridProps {
   items: PortfolioItem[];
+  title?: string;
 }
 
-export default function PortfolioGrid({ items }: PortfolioGridProps) {
+export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
   const [selectedVideo, setSelectedVideo] = useState<PortfolioItem | null>(
     null
   );
@@ -35,6 +36,19 @@ export default function PortfolioGrid({ items }: PortfolioGridProps) {
   return (
     <Box sx={{ py: { xs: 12, lg: 18 } }}>
       <Container sx={{ px: { lg: 4 }, maxWidth: "none !important" }}>
+        {title && (
+          <Typography
+            variant="h2"
+            sx={{
+              textAlign: "center",
+              mb: 6,
+              fontWeight: 300,
+              letterSpacing: "4px",
+            }}
+          >
+            {title}
+          </Typography>
+        )}
         <Grid container spacing={4}>
           {items.map((item, index) => {
             // Simple pattern: full width, then half-half
