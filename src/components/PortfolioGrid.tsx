@@ -29,20 +29,6 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
   return (
     <Box sx={{ py: { xs: 12, lg: 18 } }}>
       <Container sx={{ px: { lg: 4 }, maxWidth: "none !important" }}>
-        {title && (
-          <Typography
-            variant="h1"
-            sx={{
-              position: "absolute",
-              left: "-10000px",
-              width: "1px",
-              height: "1px",
-              overflow: "hidden",
-            }}
-          >
-            {title}
-          </Typography>
-        )}
         <Grid container spacing={4}>
           {items.map((item, index) => {
             // Simple pattern: full width, then half-half
@@ -68,7 +54,7 @@ export default function PortfolioGrid({ items, title }: PortfolioGridProps) {
                   {item.video ? (
                     <Box
                       component="video"
-                      src={`/workvideos/${item.video}`}
+                      src={`/short_videos/${item.video}`}
                       autoPlay
                       muted
                       loop

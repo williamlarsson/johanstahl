@@ -289,7 +289,7 @@ export default function HomePage() {
         {/* Masked Video Background */}
         <MaskedVideo>
           <VideoElement
-            src={`/videos/${frontpageItems[0].video}`}
+            src={`/featured_videos/${frontpageItems[0].video}`}
             autoPlay
             loop
             muted
@@ -320,12 +320,15 @@ export default function HomePage() {
                   windowDimensions.width * 0.1,
                   windowDimensions.height * 0.18
                 )}
-                fontWeight="300"
+                fontWeight="400"
                 fill="black"
                 style={{
                   opacity: 0,
                   transformOrigin: "center",
                   animation: "fadeInScale 0.6s ease-out 0.2s forwards",
+                  fontFamily: "Arial, sans-serif",
+
+                  letterSpacing: "0.05em",
                 }}
               >
                 DIRECTOR
@@ -344,12 +347,14 @@ export default function HomePage() {
                   windowDimensions.width * 0.12,
                   windowDimensions.height * 0.2
                 )}
-                fontWeight="300"
+                fontWeight="400"
                 fill="black"
                 style={{
                   opacity: 0,
                   transformOrigin: "center",
                   animation: "fadeInScale 0.6s ease-out 0.4s forwards",
+                  fontFamily: "Arial, sans-serif",
+                  letterSpacing: "0.05em",
                 }}
               >
                 JOHAN STAHL
@@ -388,7 +393,7 @@ export default function HomePage() {
                     ref={(el) => {
                       videoRefs.current[index] = el;
                     }}
-                    src={`/videos/${item.video}`}
+                    src={`/featured_videos/${item.video}`}
                     loop
                     muted
                     playsInline
@@ -452,17 +457,18 @@ export default function HomePage() {
                     mb: 1,
                   }}
                 >
-                  {item.title}
+                  {item.client}
                 </Typography>
                 <Typography
                   variant="h3"
                   sx={{
                     fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
                     fontWeight: 300,
+                    fontStyle: "italic",
                     color: "rgba(255, 255, 255, 0.8)",
                   }}
                 >
-                  {item.client}
+                  {item.title}
                 </Typography>
               </Box>
             ))}

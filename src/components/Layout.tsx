@@ -24,7 +24,6 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const pathname = usePathname();
-  console.log("🔍 pathname → ", pathname);
   const [navOpacity, setNavOpacity] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -46,19 +45,34 @@ export default function Layout({ children }: LayoutProps) {
   }, []);
 
   const navItems = [
-    { href: "/", label: "Featured Work" },
-    { href: "/all-work", label: "All Work" },
-    { href: "/narrative-music", label: "Narrative & Music Videos" },
-    { href: "/about", label: "About" },
-    // { href: "/contact", label: "Contact" },
+    { href: "/", label: "Featured Work", backgroundColor: "black" },
+    { href: "/all-work", label: "All Work", backgroundColor: "black" },
+    {
+      href: "/narrative-music",
+      label: "Narrative & Music Videos",
+      backgroundColor: "black",
+    },
+    { href: "/about", label: "About", backgroundColor: "#142736" },
+    { href: "/contact", label: "Contact", backgroundColor: "#142736" },
   ];
 
   const navIsActive = (href: string) => {
     return pathname.replaceAll("/", "") === href.replaceAll("/", "");
   };
 
+  const getCurrentBackgroundColor = () => {
+    const currentItem = navItems.find((item) => navIsActive(item.href));
+    return currentItem?.backgroundColor || "black";
+  };
+
   return (
-    <Box sx={{ minHeight: "100dvh" }}>
+    <Box
+      sx={{
+        minHeight: "100dvh",
+        transition: "background-color 0.3s ease-in-out",
+        backgroundColor: getCurrentBackgroundColor(),
+      }}
+    >
       <AppBar
         position="fixed"
         sx={{

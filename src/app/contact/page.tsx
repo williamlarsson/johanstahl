@@ -1,191 +1,247 @@
-import Layout from "@/components/Layout";
-import {
-  Box,
-  Typography,
-  Grid,
-  Paper,
-  Link as MuiLink,
-  Container,
-} from "@mui/material";
+import { Box, Typography, Container, Grid } from "@mui/material";
 import Link from "next/link";
 
 export default function Contact() {
   return (
-    <Layout>
-      <Container maxWidth="xl">
-        <Grid container spacing={6}>
-          {/* Representation */}
+    <Box
+      sx={{
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        pb: 8,
+      }}
+    >
+      <Container maxWidth="lg" sx={{ mt: "100px" }}>
+        {/* Main Title */}
+
+        <Grid container spacing={8} alignItems="flex-start">
+          {/* Representation Section */}
           <Grid size={{ xs: 12, lg: 6 }}>
-            <Typography
-              variant="h2"
+            <Box
               sx={{
-                fontSize: "2rem",
-                fontWeight: "bold",
-                textAlign: "center",
-                color: "white",
-                mb: 4,
+                animation: "fadeIn 0.8s 0.4s ease-in-out forwards",
+                opacity: 0,
+                "@keyframes fadeIn": {
+                  "0%": { opacity: "0" },
+                  "100%": { opacity: "1" },
+                },
               }}
             >
-              Representation
-            </Typography>
+              <Typography
+                variant="h3"
+                sx={{
+                  fontSize: "1.5rem",
+                  fontWeight: "bold",
+                  color: "white",
+                  mb: 4,
+                  textTransform: "uppercase",
+                  textDecoration: "underline",
+                }}
+              >
+                REPRESENTED BY
+              </Typography>
 
-            <Box sx={{ color: "grey.300" }}>
+              {/* Thirsty Film */}
               <Box sx={{ mb: 6 }}>
                 <Typography
-                  variant="h3"
-                  sx={{ fontWeight: 600, color: "white", mb: 1 }}
+                  variant="body1"
+                  sx={{ color: "grey.300", mb: 1, fontSize: "1.125rem" }}
+                >
+                  Niels Kau | Executive Producer
+                </Typography>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontWeight: "bold",
+                    color: "white",
+                    mb: 1,
+                    fontSize: "1.25rem",
+                  }}
                 >
                   THIRSTY FILM
                 </Typography>
-                <Typography variant="body1" sx={{ mb: 2 }}>
-                  <MuiLink
-                    component={Link}
-                    href="https://thirstyfilm.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    sx={{
-                      color: "primary.light",
-                      "&:hover": { color: "primary.main" },
+                <Typography
+                  variant="body1"
+                  sx={{ color: "grey.300", mb: 1, fontSize: "1.125rem" }}
+                >
+                  COPENHAGEN | STOCKHOLM | HELSINKI | SHANGHAI
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ color: "grey.300", mb: 1, fontSize: "1.125rem" }}
+                >
+                  +45 28 45 04 03
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ color: "grey.300", fontSize: "1.125rem" }}
+                >
+                  <Link
+                    href="mailto:niels@thirsty.film"
+                    style={{
+                      color: "inherit",
+                      textDecoration: "underline",
                     }}
                   >
-                    thirstyfilm.com
-                  </MuiLink>
+                    niels@thirsty.film
+                  </Link>
                 </Typography>
               </Box>
 
-              <Box sx={{ mb: 6 }}>
+              {/* US Representation */}
+              <Box sx={{ mb: 4 }}>
                 <Typography
-                  variant="h3"
-                  sx={{ fontWeight: 600, color: "white", mb: 1 }}
+                  variant="h4"
+                  sx={{
+                    fontWeight: "bold",
+                    color: "white",
+                    mb: 2,
+                    fontSize: "1.25rem",
+                  }}
+                >
+                  US Representation:
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ color: "grey.300", mb: 1, fontSize: "1.125rem" }}
+                >
+                  Thibaut Estellon | Executive Producer
+                </Typography>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontWeight: "bold",
+                    color: "white",
+                    mb: 1,
+                    fontSize: "1.25rem",
+                  }}
                 >
                   REVERSE
                 </Typography>
-                <Typography variant="body1" sx={{ mb: 2 }}>
-                  <MuiLink
-                    component={Link}
-                    href="https://reverse.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    sx={{
-                      color: "primary.light",
-                      "&:hover": { color: "primary.main" },
+                <Typography
+                  variant="body1"
+                  sx={{ color: "grey.300", mb: 1, fontSize: "1.125rem" }}
+                >
+                  <Link
+                    href="mailto:thibaut@thisisreverse.com"
+                    style={{
+                      color: "inherit",
+                      textDecoration: "underline",
                     }}
                   >
-                    reverse.com
-                  </MuiLink>
+                    thibaut@thisisreverse.com
+                  </Link>
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ color: "grey.300", fontSize: "1.125rem" }}
+                >
+                  <Link
+                    href="https://www.thisisreverse.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: "inherit",
+                      textDecoration: "underline",
+                    }}
+                  >
+                    www.Thisisreverse.com
+                  </Link>
                 </Typography>
               </Box>
             </Box>
           </Grid>
 
-          {/* Contact Information */}
+          {/* Contact Info Section */}
           <Grid size={{ xs: 12, lg: 6 }}>
-            <Typography
-              variant="h2"
+            <Box
               sx={{
-                fontSize: "2rem",
-                fontWeight: "bold",
-                textAlign: "center",
-                color: "white",
-                mb: 4,
+                animation: "fadeIn 0.8s 0.6s ease-in-out forwards",
+                opacity: 0,
+                "@keyframes fadeIn": {
+                  "0%": { opacity: "0" },
+                  "100%": { opacity: "1" },
+                },
               }}
             >
-              Contact
-            </Typography>
-
-            <Box sx={{ color: "grey.300" }}>
-              <Paper
+              <Typography
+                variant="h3"
                 sx={{
-                  p: 2,
-                  mb: 2,
-                  bgcolor: "rgba(255, 255, 255, 0.05)",
-                  display: "flex",
-                  flexDirection: { xs: "column", sm: "row" },
-                  alignItems: { xs: "flex-start", sm: "center" },
-                  justifyContent: "space-between",
+                  fontSize: "1.5rem",
+                  fontWeight: "bold",
+                  color: "white",
+                  mb: 4,
+                  textTransform: "uppercase",
+                  textDecoration: "underline",
                 }}
               >
-                <Box
-                  sx={{
-                    color: "grey.400",
-                    fontWeight: 500,
-                    mb: { xs: 1, sm: 0 },
-                  }}
-                >
-                  Skype
-                </Box>
-                <Box sx={{ color: "white" }}>johanstahlw</Box>
-              </Paper>
+                CONTACT INFO
+              </Typography>
 
-              <Paper
-                sx={{
-                  p: 2,
-                  mb: 2,
-                  bgcolor: "rgba(255, 255, 255, 0.05)",
-                  display: "flex",
-                  flexDirection: { xs: "column", sm: "row" },
-                  alignItems: { xs: "flex-start", sm: "center" },
-                  justifyContent: "space-between",
-                }}
-              >
-                <Box
-                  sx={{
-                    color: "grey.400",
-                    fontWeight: 500,
-                    mb: { xs: 1, sm: 0 },
-                  }}
-                >
-                  Website
+              {/* Contact Details */}
+              <Box sx={{ mb: 4 }}>
+                <Box sx={{ mb: 3 }}>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      fontWeight: "bold",
+                      color: "white",
+                      mb: 1,
+                      fontSize: "1.25rem",
+                    }}
+                  >
+                    Website
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    sx={{ color: "grey.300", fontSize: "1.125rem" }}
+                  >
+                    <Link
+                      href="https://www.johanstahl.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: "inherit",
+                        textDecoration: "underline",
+                      }}
+                    >
+                      www.johanstahl.com
+                    </Link>
+                  </Typography>
                 </Box>
-                <MuiLink
-                  component={Link}
-                  href="https://johanstahl.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    color: "primary.light",
-                    "&:hover": { color: "primary.main" },
-                  }}
-                >
-                  johanstahl.com
-                </MuiLink>
-              </Paper>
 
-              <Paper
-                sx={{
-                  p: 2,
-                  mb: 2,
-                  bgcolor: "rgba(255, 255, 255, 0.05)",
-                  display: "flex",
-                  flexDirection: { xs: "column", sm: "row" },
-                  alignItems: { xs: "flex-start", sm: "center" },
-                  justifyContent: "space-between",
-                }}
-              >
-                <Box
-                  sx={{
-                    color: "grey.400",
-                    fontWeight: 500,
-                    mb: { xs: 1, sm: 0 },
-                  }}
-                >
-                  Email
+                <Box sx={{ mb: 3 }}>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      fontWeight: "bold",
+                      color: "white",
+                      mb: 1,
+                      fontSize: "1.25rem",
+                    }}
+                  >
+                    Email
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    sx={{ color: "grey.300", fontSize: "1.125rem" }}
+                  >
+                    <Link
+                      href="mailto:mail@johanstahl.com"
+                      style={{
+                        color: "inherit",
+                        textDecoration: "underline",
+                      }}
+                    >
+                      mail@johanstahl.com
+                    </Link>
+                  </Typography>
                 </Box>
-                <MuiLink
-                  component={Link}
-                  href="mailto:johan@johanstahl.com"
-                  sx={{
-                    color: "primary.light",
-                    "&:hover": { color: "primary.main" },
-                  }}
-                >
-                  johan@johanstahl.com
-                </MuiLink>
-              </Paper>
+              </Box>
             </Box>
           </Grid>
         </Grid>
       </Container>
-    </Layout>
+    </Box>
   );
 }
