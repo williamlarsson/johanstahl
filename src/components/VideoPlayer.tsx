@@ -192,28 +192,30 @@ export default function VideoPlayer({
       >
         <Box sx={{ textAlign: "left", maxWidth: "lg" }}>
           <Typography
-            variant="h4"
+            variant="h3"
             sx={{
-              fontWeight: 600,
+              fontWeight: 300,
+              fontSize: { xs: "1.5rem", sm: "2rem", md: "2.8rem" },
+              lineHeight: 1.2,
               mb: 1,
               color: "white",
-              fontSize: { xs: "1.5rem", md: "2.125rem" },
+              fontFamily: "var(--font-playfair-display), serif",
+            }}
+          >
+            {video.client}
+          </Typography>
+          <Typography
+            variant="h3"
+            sx={{
+              fontSize: { xs: "1.2rem", sm: "1.6rem", md: "2rem" },
+              fontWeight: 300,
+              fontStyle: "italic",
+              color: "rgba(255, 255, 255, 0.8)",
+              mb: 2,
             }}
           >
             {video.title}
           </Typography>
-          {video.client && (
-            <Typography
-              variant="h6"
-              sx={{
-                color: "grey.300",
-                mb: 2,
-                fontSize: { xs: "1rem", md: "1.25rem" },
-              }}
-            >
-              {video.client}
-            </Typography>
-          )}
           {video.info && (
             <Typography
               variant="body1"

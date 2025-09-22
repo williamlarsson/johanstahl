@@ -8,7 +8,7 @@ import VideoPlayer from "@/components/VideoPlayer";
 
 const videoTransitionTimer = 2000;
 const slideDuration = 5000;
-const introDuration = 1500;
+const introDuration = 1700;
 
 const VideoContainer = styled(Box)({
   position: "absolute",
@@ -157,7 +157,7 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
-    // Hide intro after 3 seconds
+    // Hide intro after introDuration and start video carousel
     const introTimer = setTimeout(() => {
       setShowIntro(false);
     }, introDuration);
@@ -166,7 +166,7 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || showIntro) return; // Don't start carousel while intro is showing
 
     const interval = setInterval(() => {
       setCurrentIndex((prevCurrentIndex) => {
@@ -186,7 +186,7 @@ export default function HomePage() {
     }, slideDuration); // Change video every 5 seconds
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying, frontpageItems.length]);
+  }, [isAutoPlaying, showIntro, frontpageItems.length]); // Added showIntro to dependencies
 
   // Handle video playback when current index changes
   useEffect(() => {
@@ -317,8 +317,8 @@ export default function HomePage() {
                 }
                 textAnchor="middle"
                 fontSize={Math.min(
-                  windowDimensions.width * 0.1,
-                  windowDimensions.height * 0.18
+                  windowDimensions.width * 0.08,
+                  windowDimensions.height * 0.14
                 )}
                 fontWeight="400"
                 fill="black"
@@ -326,8 +326,7 @@ export default function HomePage() {
                   opacity: 0,
                   transformOrigin: "center",
                   animation: "fadeInScale 0.6s ease-out 0.2s forwards",
-                  fontFamily: "Arial, sans-serif",
-
+                  fontFamily: "var(--font-playfair-display), serif",
                   letterSpacing: "0.05em",
                 }}
               >
@@ -344,8 +343,8 @@ export default function HomePage() {
                 }
                 textAnchor="middle"
                 fontSize={Math.min(
-                  windowDimensions.width * 0.12,
-                  windowDimensions.height * 0.2
+                  windowDimensions.width * 0.14,
+                  windowDimensions.height * 0.22
                 )}
                 fontWeight="400"
                 fill="black"
@@ -353,7 +352,7 @@ export default function HomePage() {
                   opacity: 0,
                   transformOrigin: "center",
                   animation: "fadeInScale 0.6s ease-out 0.4s forwards",
-                  fontFamily: "Arial, sans-serif",
+                  fontFamily: "var(--font-bebas-neue), sans-serif",
                   letterSpacing: "0.05em",
                 }}
               >
@@ -455,6 +454,7 @@ export default function HomePage() {
                     fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3.5rem" },
                     lineHeight: 1.2,
                     mb: 1,
+                    fontFamily: "var(--font-playfair-display), serif",
                   }}
                 >
                   {item.client}

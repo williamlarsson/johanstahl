@@ -1,6 +1,18 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Layout from "@/components/Layout";
+import { Playfair_Display, Bebas_Neue } from "next/font/google";
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair-display",
+});
+
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-bebas-neue",
+});
 
 export const metadata: Metadata = {
   title: "Johan Stahl - Director",
@@ -35,7 +47,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body
+        className={`antialiased ${playfairDisplay.variable} ${bebasNeue.variable}`}
+      >
         <Layout>{children}</Layout>
       </body>
     </html>
