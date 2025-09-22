@@ -383,8 +383,9 @@ export default function HomePage() {
                   key={index}
                   sx={{
                     opacity: index === currentIndex ? 1 : 0,
-                    filter: index === currentIndex ? "blur(0px)" : "blur(12px)",
+                    filter: index === currentIndex ? "blur(0px)" : "blur(20px)",
                     cursor: "pointer",
+                    transition: "all 1s ease",
                   }}
                   onClick={() => handleVideoClick(index)}
                 >
