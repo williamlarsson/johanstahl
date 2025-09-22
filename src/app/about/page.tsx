@@ -97,6 +97,75 @@ export default function About() {
           </Grid>
         ))}
 
+        {/* Awards Section */}
+        <Grid container sx={{ mb: 8 }}>
+          <Grid size={{ xs: 12, md: 6 }} offset={{ xs: 0, md: 3 }}>
+            <Box sx={{ textAlign: "center" }}>
+              <Typography
+                variant="h3"
+                sx={{
+                  mb: 6,
+                  fontFamily: "var(--font-playfair-display), serif",
+                  fontSize: { xs: "1.8rem", md: "3rem" },
+                  fontWeight: 400,
+                }}
+              >
+                AWARDS
+              </Typography>
+
+              <Box sx={{ textAlign: "left", lineHeight: 2 }}>
+                <Typography
+                  variant="body1"
+                  sx={{ mb: 2, fontSize: "1.125rem" }}
+                >
+                  Robert award, best long fiction.
+                </Typography>
+
+                <Typography
+                  variant="body1"
+                  sx={{ mb: 2, fontSize: "1.125rem" }}
+                >
+                  Gold Pencil - The ONE club for Creativity
+                </Typography>
+
+                <Typography
+                  variant="body1"
+                  sx={{ mb: 2, fontSize: "1.125rem" }}
+                >
+                  True Award
+                </Typography>
+
+                <Typography
+                  variant="body1"
+                  sx={{ mb: 2, fontSize: "1.125rem" }}
+                >
+                  Shot Awards (americas) – best online commercial of the year.
+                  (Nom)
+                </Typography>
+
+                <Typography
+                  variant="body1"
+                  sx={{ mb: 2, fontSize: "1.125rem" }}
+                >
+                  Rose D&apos;or
+                </Typography>
+
+                <Typography
+                  variant="body1"
+                  sx={{ mb: 2, fontSize: "1.125rem" }}
+                >
+                  Sundance Film festival, winner best new world documentary
+                  (DOP)
+                </Typography>
+
+                <Typography variant="body1" sx={{ fontSize: "1.125rem" }}>
+                  Giffoni Film Festival
+                </Typography>
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+
         {/* Download Button */}
         <Grid size={{ xs: 12 }}>
           <Box sx={{ textAlign: "center", mt: 6 }}>
