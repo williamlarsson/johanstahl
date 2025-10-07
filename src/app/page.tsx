@@ -121,13 +121,8 @@ export default function HomePage() {
   }, []);
 
   const handleVideoClick = (index: number) => {
-    console.log("=== VIDEO CLICK DEBUG ===");
-    console.log("Clicked index:", index);
-    console.log("Selected video:", frontpageItems[index]);
-    console.log("Video title:", frontpageItems[index]?.title);
-    console.log("Video client:", frontpageItems[index]?.client);
-    console.log("Video vimeoId:", frontpageItems[index]?.vimeoId);
-    console.log("========================");
+    // Simple mapping: index 0 = video 1, index 1 = video 2, etc.
+    // So clicked index should directly select that video
     setSelectedVideo(frontpageItems[index]);
     setIsVideoOpen(true);
   };
