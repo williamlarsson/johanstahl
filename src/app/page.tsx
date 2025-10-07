@@ -388,12 +388,7 @@ export default function HomePage() {
                     cursor: "pointer",
                     transition: "all 1s ease",
                   }}
-                  onClick={() => {
-                    // Only handle click on the currently visible video
-                    if (index === currentIndex) {
-                      handleVideoClick(index);
-                    }
-                  }}
+                  onClick={() => handleVideoClick(index)}
                 >
                   <VideoElement
                     ref={(el) => {
