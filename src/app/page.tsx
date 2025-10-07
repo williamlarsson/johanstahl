@@ -121,12 +121,6 @@ export default function HomePage() {
   }, []);
 
   const handleVideoClick = (index: number) => {
-    console.log("=== VIDEO CLICK DEBUG ===");
-    console.log("Clicked index:", index);
-    console.log("Video at that index:", frontpageItems[index]);
-    console.log("Video title:", frontpageItems[index]?.title);
-    console.log("Video client:", frontpageItems[index]?.client);
-    console.log("========================");
     setSelectedVideo(frontpageItems[index]);
     setIsVideoOpen(true);
   };
@@ -195,8 +189,6 @@ export default function HomePage() {
 
   // Handle video playback when current index changes
   useEffect(() => {
-    console.log("Current index changed to:", currentIndex);
-
     // Skip video manipulation on initial load
     if (isInitialLoad.current) {
       isInitialLoad.current = false;
@@ -390,6 +382,7 @@ export default function HomePage() {
                     opacity: index === currentIndex ? 1 : 0,
                     filter: index === currentIndex ? "blur(0px)" : "blur(20px)",
                     cursor: "pointer",
+                    pointerEvents: index === currentIndex ? "auto" : "none",
                     transition: "all 1s ease",
                   }}
                   onClick={() => handleVideoClick(index)}
