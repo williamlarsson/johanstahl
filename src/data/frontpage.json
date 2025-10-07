@@ -13,7 +13,7 @@
     "image": "shell.jpg",
     "video": "shell.mp4",
     "vimeoId": 275942923,
-    "embed": "<iframe src=\"https://player.vimeo.com/video/1010888893?autoplay=1&loop=1&muted=1&controls=0&title=0&bYLINE=0&PORTRAIT=0&COLOR=92948E\" STYLE=\"WIDTH:100%;HEIGHT:100%;\" FRAMEBORDER=\"0\" WEBKITALLOWFULLSCREEN MOZALLOWFULLSCREEN ALLOWFULLSCREEN></IFRAME>"
+    "embed": "<iframe src=\"https://player.vimeo.com/video/275942923?autoplay=1&loop=1&muted=1&controls=0&title=0&bYLINE=0&PORTRAIT=0&COLOR=92948E\" STYLE=\"WIDTH:100%;HEIGHT:100%;\" FRAMEBORDER=\"0\" WEBKITALLOWFULLSCREEN MOZALLOWFULLSCREEN ALLOWFULLSCREEN></IFRAME>"
   },
   {
     "title": "Our Greatest Curiosity",
@@ -37,7 +37,7 @@
     "image": "downsize.jpg",
     "video": "royal_bank.mp4",
     "vimeoId": 215722939,
-    "embed": "<iframe src=\"https://player.vimeo.com/video/718056977?autoplay=1&loop=1&muted=1&controls=0&title=0&bYLINE=0&PORTRAIT=0&COLOR=92948E\" STYLE=\"WIDTH:100%;HEIGHT:100%;\" FRAMEBORDER=\"0\" WEBKITALLOWFULLSCREEN MOZALLOWFULLSCREEN ALLOWFULLSCREEN></IFRAME>"
+    "embed": "<iframe src=\"https://player.vimeo.com/video/215722939?autoplay=1&loop=1&muted=1&controls=0&title=0&bYLINE=0&PORTRAIT=0&COLOR=92948E\" STYLE=\"WIDTH:100%;HEIGHT:100%;\" FRAMEBORDER=\"0\" WEBKITALLOWFULLSCREEN MOZALLOWFULLSCREEN ALLOWFULLSCREEN></IFRAME>"
   },
   {
     "title": "Police",
@@ -54,14 +54,6 @@
     "video": "arbeiterkammer.mp4",
     "vimeoId": 439030328,
     "embed": "<iframe src=\"https://player.vimeo.com/video/439030328?autoplay=1&loop=1&muted=1&controls=0&title=0&bYLINE=0&PORTRAIT=0&COLOR=92948E\" STYLE=\"WIDTH:100%;HEIGHT:100%;\" FRAMEBORDER=\"0\" WEBKITALLOWFULLSCREEN MOZALLOWFULLSCREEN ALLOWFULLSCREEN></IFRAME>"
-  },
-  {
-    "title": "Power of Ideas",
-    "client": "NEWPORT BEACH",
-    "image": "newport.jpg",
-    "video": "newport_beach_shark.mp4",
-    "vimeoId": 336208245,
-    "embed": "<iframe src=\"https://player.vimeo.com/video/336208245?autoplay=1&loop=1&muted=1&controls=0&title=0&bYLINE=0&PORTRAIT=0&COLOR=92948E\" STYLE=\"WIDTH:100%;HEIGHT:100%;\" FRAMEBORDER=\"0\" WEBKITALLOWFULLSCREEN MOZALLOWFULLSCREEN ALLOWFULLSCREEN></IFRAME>"
   },
   {
     "title": "Power of Ideas",

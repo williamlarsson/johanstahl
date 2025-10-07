@@ -121,12 +121,7 @@ export default function HomePage() {
   }, []);
 
   const handleVideoClick = (index: number) => {
-    console.log("Clicked index:", index);
-    console.log("Selected video:", frontpageItems[index - 1]);
-    console.log("Video title:", frontpageItems[index - 1]?.title);
-    console.log("Video client:", frontpageItems[index - 1]?.client);
-    console.log("Video vimeoId:", frontpageItems[index - 1]?.vimeoId);
-    setSelectedVideo(frontpageItems[index - 1]);
+    setSelectedVideo(frontpageItems[index]);
     setIsVideoOpen(true);
   };
 
@@ -391,10 +386,7 @@ export default function HomePage() {
                     cursor: "pointer",
                     transition: "all 1s ease",
                   }}
-                  onClick={() => {
-                    console.log(`Video ${index} clicked: ${item.client} - ${item.title}`);
-                    handleVideoClick(index);
-                  }}
+                  onClick={() => handleVideoClick(index)}
                 >
                   <VideoElement
                     ref={(el) => {
