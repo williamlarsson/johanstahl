@@ -121,13 +121,9 @@ export default function HomePage() {
   }, []);
 
   const handleVideoClick = (index: number) => {
-    console.log("=== VIDEO CLICK DEBUG ===");
-    console.log("Clicked index:", index);
-    console.log("Video at that index:", frontpageItems[index]);
-    console.log("Video title:", frontpageItems[index]?.title);
-    console.log("Video client:", frontpageItems[index]?.client);
-    console.log("========================");
-    setSelectedVideo(frontpageItems[index]);
+    console.log("CLICKED! Index:", index);
+    console.log("Selecting video at index:", index - 1);
+    setSelectedVideo(frontpageItems[index - 1]);
     setIsVideoOpen(true);
   };
 
